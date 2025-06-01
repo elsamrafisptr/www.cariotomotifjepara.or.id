@@ -1,4 +1,4 @@
-import Blog from '@/components/layouts/blog'
+import Blog from '@/modules/blog'
 
 const BlogPage = () => {
   return <Blog />

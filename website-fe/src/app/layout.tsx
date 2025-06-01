@@ -1,21 +1,20 @@
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
 
-import './globals.css'
+import { geistMono, geistSans } from '@/assets/fonts'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin']
-})
+import '../assets/globals.css'
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin']
-})
+export const metadata: Metadata = {
+  title: {
+    absolute: 'Pencarian Otomotif Jepara Terlengkap',
+    default: 'Pencarian Otomotif Jepara Terlengkap',
+    template: ''
+  }
+}
 
-export const metadata: Metadata = {}
-
-export const viewport: Viewport = {}
+export const viewport: Viewport = {
+  maximumScale: 1
+}
 
 export default function RootLayout({
   children
@@ -23,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>

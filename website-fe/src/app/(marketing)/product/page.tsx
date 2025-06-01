@@ -1,4 +1,4 @@
-import Product from '@/components/layouts/product'
+import Product from '@/modules/product'
 
 const ProductPage = () => {
   return <Product />

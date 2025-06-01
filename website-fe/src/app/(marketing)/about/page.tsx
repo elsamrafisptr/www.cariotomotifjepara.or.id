@@ -1,4 +1,4 @@
-import About from '@/components/layouts/about'
+import About from '@/modules/about'
 
 const AboutPage = () => {
   return <About />
