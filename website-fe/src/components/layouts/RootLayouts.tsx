@@ -6,7 +6,9 @@ import { useHasMounted } from '@/hooks'
 import 'aos/dist/aos.css'
 import { ReactNode, Suspense, useEffect } from 'react'
 
+import BackToTopButton from '../elements/BackToTopButton'
 import Navbar from '../elements/Navbar'
+import Footer from './Footer'
 import Loading from './Loading'
 
 const FloatingWhatsApp = dynamic(() => import('../elements/WhatsappFloatingButton'), {
@@ -31,7 +33,7 @@ const RootLayouts = ({
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      <main className="container mx-auto px-4 py-16">
+      <main className="">
         <Suspense fallback={<Loading />}>
           <FloatingWhatsApp
             phoneNumber="628132614262"
@@ -45,8 +47,17 @@ const RootLayouts = ({
             position="bottom-right"
             messageDelay={2}
           />
+          <BackToTopButton
+            threshold={300}
+            scrollDuration={800}
+            position="bottom-center"
+            size="md"
+            backgroundColor="#3B82F6"
+            showProgress={true}
+          />
+          {children}
+          <Footer />
         </Suspense>
-        {children}
       </main>
     </div>
   )

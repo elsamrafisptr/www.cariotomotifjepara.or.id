@@ -14,7 +14,7 @@
     "types:check": "tsc --noEmit --pretty",
     "test": "jest --watch",
     "test:coverage": "jest --coverage --verbose",
-    "prepare": "husky"
+    "prepare": "sh ./.husky/pre-commit"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.14",
