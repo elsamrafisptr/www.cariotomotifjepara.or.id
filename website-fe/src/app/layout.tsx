@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from 'next'
 
 import { geistMono, geistSans } from '@/assets/fonts'
 
+import RootLayouts from '@/components/layouts/RootLayouts'
+
 import '../assets/globals.css'
 
 export const metadata: Metadata = {
@@ -24,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
+        <RootLayouts>{children}</RootLayouts>
       </body>
     </html>
   )
