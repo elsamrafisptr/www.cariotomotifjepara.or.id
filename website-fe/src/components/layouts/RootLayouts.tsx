@@ -9,13 +9,9 @@ import { Suspense, useEffect } from 'react'
 import Navbar from '../elements/Navbar'
 import Loading from './Loading'
 
-const FloatingWhatsApp = dynamic(
-  () =>
-    import('@carlos8a/react-whatsapp-floating-button').then(
-      mod => mod.FloatingWhatsApp
-    ),
-  { ssr: false }
-)
+const FloatingWhatsApp = dynamic(() => import('../elements/WhatsappFloatingButton'), {
+  ssr: false
+})
 
 const RootLayouts = ({
   children
@@ -39,14 +35,15 @@ const RootLayouts = ({
         <Suspense>
           <FloatingWhatsApp
             phoneNumber="628132614262"
-            accountName="Praba Dwi Yunanto"
+            accountName="Pak Probo (Admin 1)"
             avatar="../../../globe.svg"
-            initialMessageByServer="Halo, apa ada yang bisa saya bantu, buat cari otomotif keinginan anda?"
+            initialMessageByServer="Halo, apa ada yang bisa saya bantu, buat cari otomotif keinginan anda? 🙏"
             initialMessageByClient="Halo Pak Praba, saya ingin cari-cari otomotif di jepara nih"
             statusMessage="Online"
             startChatText="Hubungi Sekarang"
             tooltipText="Mau cari otomotif apa hari ini?"
-            allowEsc={true}
+            position="bottom-right"
+            messageDelay={2}
           />
         </Suspense>
         {children}
