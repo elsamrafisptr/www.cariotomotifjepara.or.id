@@ -1,29 +1,54 @@
 'use client'
 
-import { FloatingWhatsApp } from '@carlos8a/react-whatsapp-floating-button'
+import dynamic from 'next/dynamic'
+
+import { useHasMounted } from '@/hooks'
+import 'aos/dist/aos.css'
+import { Suspense, useEffect } from 'react'
 
 import Navbar from '../elements/Navbar'
+import Loading from './Loading'
+
+const FloatingWhatsApp = dynamic(
+  () =>
+    import('@carlos8a/react-whatsapp-floating-button').then(
+      mod => mod.FloatingWhatsApp
+    ),
+  { ssr: false }
+)
 
 const RootLayouts = ({
   children
 }: Readonly<{
   children: React.ReactNode
 }>) => {
+  const mounted = useHasMounted()
+
+  useEffect(() => {
+    import('aos').then(AOS => {
+      AOS.init({ duration: 800, delay: 50 })
+    })
+  }, [])
+
+  if (!mounted) return <Loading />
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       <main className="container mx-auto px-4 py-16">
-        <FloatingWhatsApp
-          phoneNumber="628132614262"
-          accountName="Praba Dwi Yunanto"
-          avatar="../../../globe.svg"
-          initialMessageByServer="Halo, apa ada yang bisa saya bantu, buat cari otomotif keinginan anda?"
-          initialMessageByClient="Halo Pak Praba, saya ingin cari-cari otomotif di jepara nih"
-          statusMessage="Online"
-          startChatText="Hubungi Sekarang"
-          tooltipText="Mau cari otomotif apa hari ini?"
-          allowEsc={true}
-        />
+        <Suspense>
+          <FloatingWhatsApp
+            phoneNumber="628132614262"
+            accountName="Praba Dwi Yunanto"
+            avatar="../../../globe.svg"
+            initialMessageByServer="Halo, apa ada yang bisa saya bantu, buat cari otomotif keinginan anda?"
+            initialMessageByClient="Halo Pak Praba, saya ingin cari-cari otomotif di jepara nih"
+            statusMessage="Online"
+            startChatText="Hubungi Sekarang"
+            tooltipText="Mau cari otomotif apa hari ini?"
+            allowEsc={true}
+          />
+        </Suspense>
         {children}
       </main>
     </div>
