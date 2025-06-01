@@ -1,3 +1,3 @@
-import About from "./sections/About";
+import About from './sections/About'
 
-export default About;
+export default About

@@ -1,1 +1,15 @@
-npm test
+echo '🏗️👷 Styling, testing and building your project before committing'
+
+bun run lint:fix
+
+bun run format
+
+bun run lint
+
+bun run format:check
+
+bun run types:check
+
+bun run build
+
+echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'

@@ -1,7 +1,7 @@
-import About from "@/components/layouts/about";
+import About from '@/components/layouts/about'
 
 const AboutPage = () => {
-  return <About />;
-};
+  return <About />
+}
 
-export default AboutPage;
+export default AboutPage

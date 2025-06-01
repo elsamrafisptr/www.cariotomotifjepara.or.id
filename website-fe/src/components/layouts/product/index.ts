@@ -1,3 +1,3 @@
-import Product from "./sections/Product";
+import Product from './sections/Product'
 
-export default Product;
+export default Product

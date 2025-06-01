@@ -1,9 +1,7 @@
 import React from 'react'
 
 const CTABanner = () => {
-  return (
-    <div>CTABanner</div>
-  )
+  return <div>CTABanner</div>
 }
 
 export default CTABanner

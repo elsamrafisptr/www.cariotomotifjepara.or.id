@@ -1,7 +1,7 @@
-import Product from "@/components/layouts/product";
+import Product from '@/components/layouts/product'
 
 const ProductPage = () => {
-  return <Product />;
-};
+  return <Product />
+}
 
-export default ProductPage;
+export default ProductPage

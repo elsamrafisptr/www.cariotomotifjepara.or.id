@@ -1,3 +1,3 @@
-import Contact from "./sections/Contact";
+import Contact from './sections/Contact'
 
-export default Contact;
+export default Contact

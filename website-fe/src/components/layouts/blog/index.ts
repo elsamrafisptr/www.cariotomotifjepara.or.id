@@ -1,3 +1,3 @@
-import Blog from "./sections/Blog";
+import Blog from './sections/Blog'
 
-export default Blog;
+export default Blog

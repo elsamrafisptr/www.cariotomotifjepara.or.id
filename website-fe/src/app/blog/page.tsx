@@ -1,7 +1,7 @@
-import Blog from "@/components/layouts/blog";
+import Blog from '@/components/layouts/blog'
 
 const BlogPage = () => {
-  return <Blog />;
-};
+  return <Blog />
+}
 
-export default BlogPage;
+export default BlogPage
