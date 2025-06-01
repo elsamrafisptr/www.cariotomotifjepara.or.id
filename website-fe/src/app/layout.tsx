@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from 'next'
 
+import '../assets/globals.css'
+
 import { geistMono, geistSans } from '@/assets/fonts'
 
 import RootLayouts from '@/components/layouts/RootLayouts'
-
-import '../assets/globals.css'
 
 export const metadata: Metadata = {
   title: {

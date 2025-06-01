@@ -2,11 +2,17 @@
   "importOrder": [
     "^(next/(.*)$)|^(next$)",
     "<THIRD_PARTY_MODULES>",
-    "^@/components/layouts/(.*)$",
+    "^[./]",
+    "^@/assets/(.*)$",
+    "^@/common/contents/(.*)$",
+    "^@/common/types/(.*)$",
+    "^@/locales/(.*)$",
     "^@/stores/(.*)$",
     "^@/hooks/(.*)$",
-    "^@/constants/contents/(.*)$",
-    "^[./]"
+    "^@/lib/(.*)$",
+    "^@/services/(.*)$",
+    "^@/modules/(.*)$",
+    "^@/components/(.*)$"
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
