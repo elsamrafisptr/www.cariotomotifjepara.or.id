@@ -1,11 +1,13 @@
 import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
-export function cn(...inputs: ClassValue[]) {
+import { generatePageMetadata } from './seo'
+
+function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const getBaseUrl = () => {
+const getBaseUrl = () => {
   if (process.env.NEXT_PUBLIC_APP_URL) {
     return process.env.NEXT_PUBLIC_APP_URL
   }
@@ -24,13 +26,15 @@ export const getBaseUrl = () => {
   return 'http://localhost:3000'
 }
 
-export const getLocalStorage = (key: string) => {
+const getLocalStorage = (key: string) => {
   if (typeof window !== 'undefined') {
     return JSON.parse(localStorage.getItem(key) || '[]')
   }
   return []
 }
 
-export const sanitizeText = (text: string) => {
+const sanitizeText = (text: string) => {
   return text.replace('<has_function_call>', '')
 }
+
+export { cn, getBaseUrl, getLocalStorage, sanitizeText, generatePageMetadata }

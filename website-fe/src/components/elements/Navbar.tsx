@@ -125,24 +125,17 @@ const PureNavbar = () => {
             {/* Mobile Menu Button */}
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="lg:hidden">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="hover:cursor-pointer lg:hidden"
+                >
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-full sm:w-96">
+              <SheetContent side="right" className="w-10/12 px-6 py-4 sm:w-96">
                 <div className="mt-6 flex flex-col space-y-6">
-                  <div className="flex items-center justify-between">
-                    <Link href="/" className="flex items-center space-x-2">
-                      <div className="flex h-8 w-8 items-center justify-center rounded bg-blue-600">
-                        <Cloud className="h-5 w-5 text-white" />
-                      </div>
-                      <span className="text-xl font-bold text-gray-900">
-                        DigitalOcean
-                      </span>
-                    </Link>
-                  </div>
-
                   <nav className="flex flex-col space-y-4">
                     {navigationItems.map(item => (
                       <div key={item.title} className="space-y-2">

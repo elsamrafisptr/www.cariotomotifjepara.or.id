@@ -320,7 +320,7 @@ export default function WhatsAppFloatingButton({
                 <Image
                   src={avatar || '/placeholder.svg'}
                   alt={accountName}
-                  className="mr-3 h-10 w-10 rounded-full"
+                  className="mr-3 h-10 w-10 rounded-full object-cover object-right"
                   width={1024}
                   height={1024}
                 />
@@ -333,14 +333,18 @@ export default function WhatsAppFloatingButton({
                   >
                     {accountName}
                   </h3>
-                  <p
+                  <div
                     className={cn(
-                      'text-xs',
+                      'flex items-baseline gap-1.5 text-xs',
                       darkMode ? 'text-gray-300' : 'text-gray-500'
                     )}
                   >
-                    {statusMessage}
-                  </p>
+                    <span className="relative flex size-2">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-300 opacity-75"></span>
+                      <span className="relative inline-flex size-2 rounded-full bg-green-400"></span>
+                    </span>
+                    <p>{statusMessage}</p>
+                  </div>
                 </div>
                 <button
                   onClick={handleClose}

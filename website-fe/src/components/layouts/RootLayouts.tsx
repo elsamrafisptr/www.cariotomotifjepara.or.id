@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 
 import { useHasMounted } from '@/hooks'
 import 'aos/dist/aos.css'
-import { Suspense, useEffect } from 'react'
+import { ReactNode, Suspense, useEffect } from 'react'
 
 import Navbar from '../elements/Navbar'
 import Loading from './Loading'
@@ -16,7 +16,7 @@ const FloatingWhatsApp = dynamic(() => import('../elements/WhatsappFloatingButto
 const RootLayouts = ({
   children
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode
 }>) => {
   const mounted = useHasMounted()
 
@@ -32,12 +32,12 @@ const RootLayouts = ({
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       <main className="container mx-auto px-4 py-16">
-        <Suspense>
+        <Suspense fallback={<Loading />}>
           <FloatingWhatsApp
             phoneNumber="628132614262"
             accountName="Pak Probo (Admin 1)"
-            avatar="../../../globe.svg"
-            initialMessageByServer="Halo, apa ada yang bisa saya bantu, buat cari otomotif keinginan anda? 🙏"
+            avatar="../../../admin_1.jpg"
+            initialMessageByServer="Halo, apa ada yang bisa saya bantu buat cari otomotif keinginan anda? 🙏"
             initialMessageByClient="Halo Pak Praba, saya ingin cari-cari otomotif di jepara nih"
             statusMessage="Online"
             startChatText="Hubungi Sekarang"
