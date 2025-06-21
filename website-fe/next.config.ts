@@ -2,6 +2,8 @@ import type { NextConfig } from 'next'
 
 import withBundleAnalyzer from '@next/bundle-analyzer'
 
+const isProd = process.env.NODE_ENV === 'production'
+
 const baseConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: true,
@@ -17,8 +19,8 @@ const baseConfig: NextConfig = {
   },
   experimental: {
     optimizeCss: false,
-    turbopackMinify: true,
-    turbopackTreeShaking: true,
+    turbopackMinify: isProd,
+    turbopackTreeShaking: isProd,
     optimisticClientCache: true,
     optimizeServerReact: true,
     optimizePackageImports: [
