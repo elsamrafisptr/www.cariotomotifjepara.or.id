@@ -1,10 +1,11 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { navigationItems, simpleItems } from '@/common/contents'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ChevronDown, Cloud, Menu } from 'lucide-react'
+import { ChevronDown, Menu } from 'lucide-react'
 import { memo, useEffect, useRef, useState } from 'react'
 
 import { cn } from '@/lib/utils'
@@ -61,8 +62,14 @@ const PureNavbar = () => {
             {/* Logo */}
             <div className="flex items-center">
               <Link href="/" className="flex items-center space-x-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded bg-blue-600">
-                  <Cloud className="h-5 w-5 text-white" />
+                <div className="relative flex h-8 w-8 items-center justify-center rounded bg-blue-600">
+                  <Image
+                    src="/logo.png"
+                    alt="Jual Otomotif Jepara Logo"
+                    width={1024}
+                    height={1024}
+                    className="w-full rounded object-cover"
+                  />
                 </div>
                 <span className="text-xl font-bold text-gray-900">
                   Cari Otomotif Jepara

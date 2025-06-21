@@ -1,7 +1,4 @@
 import CarouselHeadline from './CarouselHeadline'
-import NewRecommendations from './NewRecommendations'
-import NewRelease from './NewRelease'
-import PopulerSecondHand from './PopulerSecondHand'
 import ServicesCard from './ServicesCard'
 
 export interface CarouselSlide {
@@ -33,7 +30,7 @@ const Home = () => {
 
       <ServicesCard />
 
-      <NewRecommendations
+      {/* <NewRecommendations
         title="New Recommendations"
         viewAllText="View All Products"
         className="bg-white"
@@ -43,11 +40,11 @@ const Home = () => {
           tablet: 2.5,
           desktop: 4
         }}
-      />
+      /> */}
 
-      <PopulerSecondHand />
+      {/* <PopulerSecondHand /> */}
 
-      <NewRelease />
+      {/* <NewRelease /> */}
 
       {/* By Type */}
 

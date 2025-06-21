@@ -1,50 +1,10 @@
 'use client'
 
-import { Facebook, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react'
+import Image from 'next/image'
+
+import { footerSections, socialLinks } from '@/common/contents'
 
 const Footer = () => {
-  const footerSections = [
-    {
-      title: 'Company',
-      links: [
-        { label: 'About Us', href: '#' },
-        { label: 'Contact Us', href: '#' },
-        { label: 'Careers', href: '#' },
-        { label: 'Press', href: '#' },
-        { label: 'Investor Relations', href: '#' }
-      ]
-    },
-    {
-      title: 'Customer Service',
-      links: [
-        { label: 'Help Center', href: '#' },
-        { label: 'FAQ', href: '#' },
-        { label: 'Returns & Exchanges', href: '#' },
-        { label: 'Shipping Info', href: '#' },
-        { label: 'Size Guide', href: '#' },
-        { label: 'Track Your Order', href: '#' }
-      ]
-    },
-    {
-      title: 'Legal',
-      links: [
-        { label: 'Privacy Policy', href: '#' },
-        { label: 'Terms of Service', href: '#' },
-        { label: 'Cookie Policy', href: '#' },
-        { label: 'Imprint', href: '#' },
-        { label: 'Data Protection', href: '#' }
-      ]
-    }
-  ]
-
-  const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Youtube, href: '#', label: 'YouTube' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' }
-  ]
-
   return (
     <footer className="border-t border-gray-200 bg-white">
       {/* Main Footer Content */}
@@ -52,14 +12,20 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Logo Section */}
           <div className="lg:col-span-1">
-            <div className="mb-6">
-              <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-gray-900">
-                <span className="text-xl font-bold text-white">LOGO</span>
+            <div className="mb-4">
+              <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-gray-900 shadow-lg ring-4 shadow-blue-50 ring-blue-600/20">
+                <Image
+                  src="/logo.png"
+                  alt="Jual Otomotif Jepara Logo"
+                  width={1024}
+                  height={1024}
+                  className="h-16 w-16 rounded-lg object-cover"
+                />
               </div>
             </div>
             <p className="max-w-48 text-sm leading-relaxed text-gray-600">
-              Your trusted partner for quality products and exceptional service since
-              2014.
+              Kepercayaan Anda untuk mendapatkan otomotif berkualitas dan layanan yang
+              memuaskan sejak 2012
             </p>
           </div>
 
@@ -92,12 +58,16 @@ const Footer = () => {
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             {/* Copyright */}
             <div className="text-sm text-gray-400">
-              <p>© 2024 Your Company. All rights reserved.</p>
+              <p>
+                © {new Date().getFullYear()} Jual Otomotif Jepara. All rights reserved.
+              </p>
             </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-4">
-              <span className="hidden text-sm text-gray-400 md:block">Follow us:</span>
+              <span className="hidden text-sm text-gray-400 md:block">
+                Kunjungi Sosial Media Kami:
+              </span>
               <div className="flex gap-3">
                 {socialLinks.map((social, index) => (
                   <a
@@ -113,19 +83,16 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="mt-4 border-t border-gray-800 pt-4">
+          <div className="mt-4 flex w-full items-center justify-center border-t border-gray-800 pt-4 md:justify-start">
             <div className="flex flex-wrap gap-6 text-xs text-gray-400">
               <a href="#" className="transition-colors hover:text-white">
-                Accessibility
+                Aksesibilitas
               </a>
               <a href="#" className="transition-colors hover:text-white">
                 Sitemap
               </a>
               <a href="#" className="transition-colors hover:text-white">
-                Cookie Settings
-              </a>
-              <a href="#" className="transition-colors hover:text-white">
-                Do Not Sell My Info
+                Jangan Jual Informasi Saya
               </a>
             </div>
           </div>

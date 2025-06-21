@@ -38,7 +38,7 @@ const RootLayouts = ({
           <FloatingWhatsApp
             phoneNumber="628132614262"
             accountName="Pak Probo (Admin 1)"
-            avatar="../../../admin_1.jpg"
+            avatar="/admin_1.jpg"
             initialMessageByServer="Halo, apa ada yang bisa saya bantu buat cari otomotif keinginan anda? 🙏"
             initialMessageByClient="Halo Pak Praba, saya ingin cari-cari otomotif di jepara nih"
             statusMessage="Online"

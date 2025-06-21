@@ -4,9 +4,9 @@ import { ReactNode } from 'react'
 
 import '../assets/globals.css'
 
-import { geistMono, geistSans } from '@/assets/fonts'
+import { roboto } from '@/assets/fonts'
 
-import { getBaseUrl } from '@/lib/utils'
+import { cn, getBaseUrl } from '@/lib/utils'
 
 import RootLayouts from '@/components/layouts/RootLayouts'
 
@@ -144,7 +144,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={cn('antialiased', roboto.className)}>
         <RootLayouts>{children}</RootLayouts>
       </body>
     </html>

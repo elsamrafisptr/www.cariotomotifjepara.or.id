@@ -1,13 +1,15 @@
 'use client'
 
-import { geistMono, geistSans } from '@/assets/fonts'
+import { roboto } from '@/assets/fonts'
+
+import { cn } from '@/lib/utils'
 
 import RootLayouts from '@/components/layouts/RootLayouts'
 
 const GlobalErrorPage = () => {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={cn('antialiased', roboto.className)}>
         <RootLayouts>Error</RootLayouts>
       </body>
     </html>
