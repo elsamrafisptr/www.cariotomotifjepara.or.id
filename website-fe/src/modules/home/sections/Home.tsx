@@ -29,7 +29,6 @@ const Home = () => {
         autoPlayInterval={4000}
         showNavigation={true}
         showDots={true}
-        className="mb-8"
       />
 
       <ServicesCard />

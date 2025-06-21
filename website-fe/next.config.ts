@@ -4,22 +4,10 @@ import withBundleAnalyzer from '@next/bundle-analyzer'
 
 const baseConfig: NextConfig = {
   reactStrictMode: true,
-  poweredByHeader: false,
+  poweredByHeader: true,
   serverExternalPackages: [],
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'ik.imagekit.io',
-        port: ''
-      },
-      {
-        protocol: 'https',
-        hostname: 'skillicons.dev',
-        port: ''
-      }
-    ],
-    unoptimized: true
+    remotePatterns: []
   },
   turbopack: {
     resolveAlias: {
@@ -29,9 +17,18 @@ const baseConfig: NextConfig = {
   },
   experimental: {
     optimizeCss: false,
+    turbopackMinify: true,
+    turbopackTreeShaking: true,
     optimisticClientCache: true,
     optimizeServerReact: true,
-    optimizePackageImports: [],
+    optimizePackageImports: [
+      'motion',
+      'lucide-react',
+      'react',
+      'react-dom',
+      '@radix-ui/react-dialog',
+      '@radix-ui/react-slot'
+    ],
     serverMinification: true
   }
 }
