@@ -7,24 +7,15 @@ import * as React from 'react'
 import { cn } from '@/lib/utils'
 
 interface BackToTopButtonProps {
-  /** Scroll threshold to show button (in pixels) */
   threshold?: number
-  /** Smooth scroll duration */
   scrollDuration?: number
-  /** Button position */
   position?: 'bottom-right' | 'bottom-left' | 'bottom-center'
-  /** Custom className */
   className?: string
-  /** Custom icon */
   icon?: React.ReactNode
-  /** Button size */
   size?: 'sm' | 'md' | 'lg'
-  /** Custom colors */
   backgroundColor?: string
   iconColor?: string
-  /** Show progress indicator */
   showProgress?: boolean
-  /** Custom click handler */
   onClick?: () => void
 }
 
@@ -41,7 +32,7 @@ const iconSizeClasses = {
 }
 
 const positionClasses = {
-  'bottom-right': 'bottom-6 right-6',
+  'bottom-right': 'bottom-24 right-7',
   'bottom-left': 'bottom-6 left-6',
   'bottom-center': 'bottom-6 left-1/2 -translate-x-1/2'
 }
@@ -61,16 +52,13 @@ export default function BackToTopButton({
   const [isVisible, setIsVisible] = React.useState(false)
   const [scrollProgress, setScrollProgress] = React.useState(0)
 
-  // Handle scroll events
   React.useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
       const docHeight = document.documentElement.scrollHeight - window.innerHeight
 
-      // Show/hide button based on threshold
       setIsVisible(scrollTop > threshold)
 
-      // Calculate scroll progress
       if (showProgress && docHeight > 0) {
         const progress = Math.min((scrollTop / docHeight) * 100, 100)
         setScrollProgress(progress)
@@ -78,7 +66,7 @@ export default function BackToTopButton({
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll() // Check initial state
+    handleScroll()
 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [threshold, showProgress])
@@ -119,14 +107,18 @@ export default function BackToTopButton({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
-          className={cn('fixed z-50', positionClasses[position], className)}
+          className={cn(
+            'fixed z-50 hover:cursor-pointer',
+            positionClasses[position],
+            className
+          )}
         >
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             onClick={scrollToTop}
             className={cn(
-              'relative rounded-full shadow-lg transition-all duration-300',
+              'relative cursor-pointer rounded-full shadow-lg transition-all duration-300',
               'focus:ring-opacity-50 hover:shadow-xl focus:ring-4 focus:ring-blue-300 focus:outline-none',
               'group flex items-center justify-center',
               sizeClasses[size]
@@ -137,7 +129,6 @@ export default function BackToTopButton({
             }}
             aria-label="Back to top"
           >
-            {/* Progress Ring */}
             {showProgress && (
               <svg
                 className="absolute inset-0 h-full w-full -rotate-90"
@@ -164,7 +155,6 @@ export default function BackToTopButton({
               </svg>
             )}
 
-            {/* Icon */}
             <div
               className={cn(
                 'relative z-10 transition-transform duration-200 group-hover:-translate-y-0.5',
@@ -174,11 +164,9 @@ export default function BackToTopButton({
               {icon || <ChevronUp className="h-full w-full" />}
             </div>
 
-            {/* Hover Effect */}
             <div className="absolute inset-0 rounded-full bg-white/10 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
           </motion.button>
 
-          {/* Tooltip */}
           <div className="pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
             <div className="rounded bg-gray-900 px-2 py-1 text-xs whitespace-nowrap text-white">
               Back to top

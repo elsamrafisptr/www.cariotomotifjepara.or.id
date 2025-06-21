@@ -18,7 +18,6 @@ const DEFAULT_BREAKPOINTS: Breakpoints = {
 export default function useResponsive(breakpoints?: Partial<Breakpoints>) {
   const { mobile, tablet } = { ...DEFAULT_BREAKPOINTS, ...breakpoints }
 
-  // SSR‐safe initial
   const [screenSize, setScreenSize] = useState<ScreenSize>({
     width: 0,
     height: 0
@@ -39,7 +38,6 @@ export default function useResponsive(breakpoints?: Partial<Breakpoints>) {
       setIsDesktop(width > tablet)
     }
 
-    // **run synchronously before paint**
     handleResize()
 
     window.addEventListener('resize', handleResize)

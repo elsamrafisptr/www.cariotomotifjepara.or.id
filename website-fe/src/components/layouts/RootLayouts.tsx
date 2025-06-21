@@ -50,7 +50,7 @@ const RootLayouts = ({
           <BackToTopButton
             threshold={300}
             scrollDuration={800}
-            position="bottom-center"
+            position="bottom-right"
             size="md"
             backgroundColor="#3B82F6"
             showProgress={true}
