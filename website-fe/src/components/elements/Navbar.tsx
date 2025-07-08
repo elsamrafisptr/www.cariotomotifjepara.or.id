@@ -57,7 +57,7 @@ const PureNavbar = () => {
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b bg-white backdrop-blur supports-[backdrop-filter]:bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-5 py-2 sm:px-24">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
@@ -144,54 +144,8 @@ const PureNavbar = () => {
               <SheetContent side="right" className="w-10/12 px-6 py-4 sm:w-96">
                 <div className="mt-6 flex flex-col space-y-6">
                   <nav className="flex flex-col space-y-4">
-                    {navigationItems.map(item => (
-                      <div key={item.title} className="space-y-2">
-                        <div className="text-lg font-semibold text-gray-900">
-                          {item.title}
-                        </div>
-                        {item.content.sections.map(section => (
-                          <div key={section.title} className="ml-4 space-y-2">
-                            <div className="text-sm font-medium text-gray-700">
-                              {section.title}
-                            </div>
-                            {section.items.map(subItem => (
-                              <Link
-                                key={subItem.title}
-                                href={subItem.href}
-                                className="ml-4 flex items-center space-x-2 rounded p-2 transition-colors duration-200 hover:bg-gray-50"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                              >
-                                <subItem.icon className="h-4 w-4 text-blue-600" />
-                                <span className="text-sm text-gray-600">
-                                  {subItem.title}
-                                </span>
-                              </Link>
-                            ))}
-                          </div>
-                        ))}
-                      </div>
-                    ))}
-
-                    {simpleItems.map(item => (
-                      <Link
-                        key={item.title}
-                        href={item.href}
-                        className="py-2 text-lg font-semibold text-gray-900"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {item.title}
-                      </Link>
-                    ))}
+                    {/* MAKE A CHANGE HERE */}
                   </nav>
-
-                  <div className="flex flex-col space-y-3 border-t pt-6">
-                    <Button variant="outline" className="w-full">
-                      Log in
-                    </Button>
-                    <Button className="w-full bg-blue-600 text-white hover:bg-blue-700">
-                      Sign up
-                    </Button>
-                  </div>
                 </div>
               </SheetContent>
             </Sheet>

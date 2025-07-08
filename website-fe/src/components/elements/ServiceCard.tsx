@@ -1,6 +1,5 @@
 import { ElementType } from 'react'
 
-import { Button } from '../ui/button'
 import { Card, CardContent } from '../ui/card'
 
 const ServiceCard = ({
@@ -15,7 +14,7 @@ const ServiceCard = ({
   links: string[] | undefined
 }) => {
   return (
-    <Card className="border border-gray-200 transition-all duration-300 hover:border-blue-300 hover:shadow-lg">
+    <Card className="border border-gray-200 transition-all duration-300 hover:cursor-pointer hover:border-blue-300">
       <CardContent className="p-8">
         <div className="mb-6">
           <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600">
@@ -60,12 +59,12 @@ const ServiceCard = ({
           </p>
         </div>
 
-        <Button
+        {/* <Button
           variant="ghost"
           className="h-auto p-0 font-medium text-blue-600 hover:bg-blue-50 hover:text-blue-700"
         >
           Learn more →
-        </Button>
+        </Button> */}
       </CardContent>
     </Card>
   )

@@ -1,12 +1,4 @@
-import {
-  Brain,
-  Compass,
-  MessageCircle,
-  Scale,
-  Server,
-  Settings,
-  Ship
-} from 'lucide-react'
+import { Brain, Compass, MessageCircle, Scale, Server, Ship } from 'lucide-react'
 
 import BenefitCard from '@/components/elements/BenefitCard'
 import ServiceCard from '@/components/elements/ServiceCard'
@@ -15,49 +7,49 @@ const ServicesCard = () => {
   const benefits = [
     {
       icon: Ship,
-      title: 'Build and ship faster using simple tools',
+      title: 'Hubungi kami darimana saja',
       description:
         'All of our products are built with simplicity at their core, so you can spend your time focusing on building apps, not infrastructure.'
     },
     {
       icon: Scale,
-      title: 'Grow profitably with predictable cloud costs',
+      title: 'Kami Proses dan dapatkan penawaran terbaik untuk Anda ',
       description:
         'Our predictable pricing and leading price-to-performance ratio contribute to an ROI of 186%, according to a Forrester study.'
     },
     {
       icon: MessageCircle,
-      title: 'Reduce your roadblocks with dedicated support',
+      title: 'Otomotif impian Anda siap menuju jalanan bersama Anda',
       description:
         'Get free, personalized support or upgrade to paid plans to receive dedicated help and faster response times.'
-    },
-    {
-      icon: Settings,
-      title: 'Improve customer experience by building on a reliable platform',
-      description:
-        'Deliver superior customer experience with our globally distributed platform, minimal downtime, and intuitive products.'
     }
   ]
 
   const services = [
     {
       icon: Server,
-      title: 'Virtual machines',
+      title: 'Harga Transparan & Terbaik',
       description:
         'DigitalOcean Droplets are simple, scalable virtual machines for all your web hosting and VPS hosting needs.',
       links: ['web hosting', 'VPS hosting']
     },
     {
+      icon: Brain,
+      title: 'Pembelian Tanpa Ribet',
+      description:
+        'Build, train, and deploy AI apps, and create AI agents with a suite of simple-to-use tools and GPU compute.'
+    },
+    {
       icon: Compass,
-      title: 'Kubernetes',
+      title: 'Layanan Terpercaya',
       description:
         'DigitalOcean Kubernetes is a managed solution that is easy to scale and includes a 99.95% SLA and free control plane.'
     },
     {
-      icon: Brain,
-      title: 'AI / ML',
+      icon: Compass,
+      title: 'Jaminan Kepuasan & Kenyamanan',
       description:
-        'Build, train, and deploy AI apps, and create AI agents with a suite of simple-to-use tools and GPU compute.'
+        'DigitalOcean Kubernetes is a managed solution that is easy to scale and includes a 99.95% SLA and free control plane.'
     }
   ]
 
@@ -65,17 +57,18 @@ const ServicesCard = () => {
     <div className="w-full">
       <section className="w-full bg-white py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-              Cari Layanan Terbaik?
+          <div className="mb-16 flex flex-col items-center justify-center text-center">
+            <h2 className="mb-4 max-w-sm text-3xl font-bold text-gray-900 sm:max-w-full md:text-4xl">
+              Kenapa Orang-Orang Sering Memilih Kami?
             </h2>
-            <p className="mx-auto max-w-3xl text-lg text-gray-600">
-              Comprehensive cloud solutions designed to power your applications with
-              enterprise-grade reliability and developer-friendly simplicity.
+            <p className="mx-auto max-w-3xl text-base text-gray-600 sm:text-lg">
+              Kami menawarkan lebih dari sekadar otomotif. Dari harga transparan,
+              layanan terpercaya, hingga proses pembelian tanpa ribet, semua dirancang
+              untuk kepuasan dan kenyamanan Anda.
             </p>
           </div>
 
-          <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2 lg:grid-cols-4">
             {services.map((service, index) => (
               <ServiceCard
                 key={index}
@@ -91,14 +84,14 @@ const ServicesCard = () => {
 
       <section className="w-full bg-gradient-to-br from-blue-50 to-cyan-50 py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-              Benefits to activate the builder in you
+          <div className="mb-16 flex flex-col items-center justify-center text-center">
+            <h2 className="mb-4 max-w-sm text-3xl font-bold text-gray-900 sm:max-w-full md:text-4xl">
+              Bagaimana Langkah Mudah Menuju Jalanan?
             </h2>
-            <p className="mx-auto max-w-4xl text-lg text-gray-600">
-              From simple tools and predictable pricing to support designed for growing
-              businesses, our platform is built to serve the unique needs of startups
-              and SMBs.
+            <p className="mx-auto max-w-4xl text-base text-gray-600 sm:text-lg">
+              Pilih otomotif impian Anda, lakukan pembayaran aman, dan kami antar
+              langsung ke rumah. Proses simpel, tanpa drama. Karena beli motor harusnya
+              semudah berkendara.
             </p>
           </div>
 
