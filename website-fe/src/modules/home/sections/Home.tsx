@@ -6,7 +6,7 @@ import ServicesCard from './ServicesCard'
 
 import { Marquee } from '@/components/ui/marquee'
 
-const BrandMarquee = [
+export const BrandMarquee = [
   { src: '/honda-white-logo.png', href: '/brands/motorcycle/honda' },
   { src: '/kawasaki-logo.png', href: '/brands/motorcycle/kawasaki' },
   { src: '/piaggio-logo.png', href: '/brands/motorcycle/piaggio' },
