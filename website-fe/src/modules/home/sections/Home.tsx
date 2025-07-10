@@ -4,7 +4,7 @@ import Link from 'next/link'
 import CarouselHeadline from './CarouselHeadline'
 import ServicesCard from './ServicesCard'
 
-import { Marquee } from '@/components/magicui/marquee'
+import { Marquee } from '@/components/ui/marquee'
 
 const BrandMarquee = [
   { src: '/honda-white-logo.png', href: '/brands/motorcycle/honda' },

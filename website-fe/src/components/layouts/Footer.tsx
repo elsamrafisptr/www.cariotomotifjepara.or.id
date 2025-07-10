@@ -8,10 +8,10 @@ const Footer = () => {
   return (
     <footer className="border-t border-gray-200 bg-white">
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container mx-auto px-4 py-12 md:px-28">
+        <div className="flex w-full flex-col items-center justify-center gap-8 sm:items-start md:grid md:grid-cols-2 lg:grid-cols-4">
           {/* Logo Section */}
-          <div className="lg:col-span-1">
+          <div className="flex flex-col items-center justify-center sm:items-start lg:col-span-1">
             <div className="mb-4">
               <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-gray-900 shadow-lg ring-4 shadow-blue-50 ring-blue-600/20">
                 <Image
@@ -23,7 +23,7 @@ const Footer = () => {
                 />
               </div>
             </div>
-            <p className="max-w-48 text-sm leading-relaxed text-gray-600">
+            <p className="max-w-96 text-center text-sm leading-relaxed text-gray-600 sm:max-w-48 sm:text-left">
               Kepercayaan Anda untuk mendapatkan otomotif berkualitas dan layanan yang
               memuaskan sejak 2012
             </p>
@@ -32,15 +32,15 @@ const Footer = () => {
           {/* Footer Sections */}
           {footerSections.map((section, index) => (
             <div key={index} className="lg:col-span-1">
-              <h3 className="mb-4 text-sm font-semibold tracking-wide text-gray-900 uppercase">
+              <h3 className="mb-4 text-center text-sm font-semibold tracking-wide text-gray-900 uppercase sm:text-left">
                 {section.title}
               </h3>
-              <ul className="space-y-3">
+              <ul className="flex flex-col items-center justify-center space-y-3 sm:items-start sm:justify-start">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <a
                       href={link.href}
-                      className="group flex items-center justify-between text-sm text-gray-600 transition-colors duration-200 hover:text-gray-900"
+                      className="group flex items-center justify-between text-center text-sm text-gray-600 transition-colors duration-200 hover:text-gray-900 sm:items-start sm:justify-start"
                     >
                       <span>{link.label}</span>
                     </a>

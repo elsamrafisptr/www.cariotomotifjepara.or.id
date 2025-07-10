@@ -3,56 +3,52 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { navigationItems, simpleItems } from '@/common/contents'
-import { AnimatePresence, motion } from 'framer-motion'
-import { ChevronDown, Menu } from 'lucide-react'
-import { memo, useEffect, useRef, useState } from 'react'
-
-import { cn } from '@/lib/utils'
+import { simpleItems } from '@/common/contents'
+import { Menu, Phone } from 'lucide-react'
+import { memo, useState } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 
 const PureNavbar = () => {
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isHoveringDropdown, setIsHoveringDropdown] = useState(false)
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+  // const [isHoveringDropdown, setIsHoveringDropdown] = useState(false)
+  // const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-  const handleMouseEnter = (title: string) => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
-    }
-    setActiveDropdown(title)
-  }
+  // const handleMouseEnter = (title: string) => {
+  //   if (timeoutRef.current) {
+  //     clearTimeout(timeoutRef.current)
+  //   }
+  //   setActiveDropdown(title)
+  // }
 
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      if (!isHoveringDropdown) {
-        setActiveDropdown(null)
-      }
-    }, 100)
-  }
+  // const handleMouseLeave = () => {
+  //   timeoutRef.current = setTimeout(() => {
+  //     if (!isHoveringDropdown) {
+  //       setActiveDropdown(null)
+  //     }
+  //   }, 100)
+  // }
 
-  const handleDropdownMouseEnter = () => {
-    setIsHoveringDropdown(true)
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
-    }
-  }
+  // const handleDropdownMouseEnter = () => {
+  //   setIsHoveringDropdown(true)
+  //   if (timeoutRef.current) {
+  //     clearTimeout(timeoutRef.current)
+  //   }
+  // }
 
-  const handleDropdownMouseLeave = () => {
-    setIsHoveringDropdown(false)
-    setActiveDropdown(null)
-  }
+  // const handleDropdownMouseLeave = () => {
+  //   setIsHoveringDropdown(false)
+  //   setActiveDropdown(null)
+  // }
 
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current)
-      }
-    }
-  }, [])
+  // useEffect(() => {
+  //   return () => {
+  //     if (timeoutRef.current) {
+  //       clearTimeout(timeoutRef.current)
+  //     }
+  //   }
+  // }, [])
 
   return (
     <>
@@ -90,11 +86,11 @@ const PureNavbar = () => {
                 </Button>
               ))}
 
-              {navigationItems.map(item => (
+              {/* {navigationItems.map(item => (
                 <div
-                  key={item.title}
+                  key={item?.title}
                   className="relative"
-                  onMouseEnter={() => handleMouseEnter(item.title)}
+                  onMouseEnter={() => handleMouseEnter(item?.title)}
                   onMouseLeave={handleMouseLeave}
                 >
                   <Button
@@ -113,19 +109,24 @@ const PureNavbar = () => {
                     </motion.div>
                   </Button>
                 </div>
-              ))}
+              ))} */}
             </nav>
 
             {/* Desktop CTA Buttons */}
             <div className="hidden items-center space-x-3 lg:flex">
               <Button
-                variant="ghost"
-                className="text-sm font-medium text-gray-700 transition-colors duration-200 hover:text-blue-600"
+                onClick={() =>
+                  window.open(
+                    'https://api.whatsapp.com/send/?phone=628132614262&text=Halo%20Pak%20Praba%2C%20saya%20ingin%20cari-cari%20otomotif%20di%20jepara%20nih',
+                    '_blank',
+                    'noopener,noreferrer'
+                  )
+                }
+                size={'lg'}
+                className="bg-blue-600 text-white transition-colors duration-200 hover:bg-blue-700"
               >
-                Log in
-              </Button>
-              <Button className="bg-blue-600 text-white transition-colors duration-200 hover:bg-blue-700">
-                Sign up
+                <Phone />
+                Pesan Sekarang
               </Button>
             </div>
 
@@ -154,7 +155,7 @@ const PureNavbar = () => {
       </header>
 
       {/* Full-width dropdown portal */}
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {activeDropdown && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -230,10 +231,10 @@ const PureNavbar = () => {
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
 
       {/* Backdrop overlay */}
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {activeDropdown && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -244,7 +245,7 @@ const PureNavbar = () => {
             onClick={() => setActiveDropdown(null)}
           />
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </>
   )
 }
