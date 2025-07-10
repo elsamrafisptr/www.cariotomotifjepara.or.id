@@ -4,14 +4,10 @@ import { useResponsive } from '@/hooks'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-import { CarouselSlide } from './Home'
-
 import { cn } from '@/lib/utils'
 
-import { Button } from '@/components/ui/button'
-
 interface HeadlineCarouselProps {
-  slides: CarouselSlide[]
+  slides: string[]
   autoPlay?: boolean
   autoPlayInterval?: number
   showNavigation?: boolean
@@ -28,7 +24,7 @@ export default function HeadlineCarousel({
   className,
   onSlideChange
 }: HeadlineCarouselProps) {
-  const { screenSize, isMobile } = useResponsive()
+  const { screenSize } = useResponsive()
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
@@ -64,60 +60,23 @@ export default function HeadlineCarousel({
   return (
     <div
       className={cn(
-        'relative h-80 overflow-hidden bg-gradient-to-tl from-blue-700 via-blue-600 to-blue-500 sm:h-96 md:h-[480px]',
+        'relative aspect-video w-full overflow-hidden bg-white sm:h-96 md:h-[480px]',
         className
       )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <AnimatePresence mode="wait">
-        <motion.div
+        <motion.img
           key={currentSlide}
-          initial={{ opacity: 1, x: screenSize.width }}
+          src={slides[currentSlide]}
+          alt={`Slide ${currentSlide + 1}`}
+          initial={{ opacity: 0, x: screenSize.width }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 1, x: -1 * screenSize.width }}
+          exit={{ opacity: 0, x: -screenSize.width }}
           transition={{ duration: 0.5, ease: 'easeInOut' }}
-          className="absolute inset-0 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700"
-        >
-          <div className="relative flex h-full items-center">
-            <div className="container mx-auto px-6 lg:px-8">
-              <div className="grid grid-cols-1 items-center gap-8">
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  className="flex flex-col items-start justify-center space-y-6 text-white"
-                >
-                  <div className="w-full space-y-2">
-                    <h1 className="w-full text-3xl leading-tight font-bold capitalize md:text-4xl lg:text-5xl">
-                      {slides[currentSlide]?.title}
-                    </h1>
-                    {slides[currentSlide]?.description && (
-                      <p className="max-w-xl text-blue-100 sm:max-w-2xl md:max-w-2xl md:text-xl">
-                        {slides[currentSlide]?.description}
-                      </p>
-                    )}
-                  </div>
-
-                  {slides[currentSlide]?.cta && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.6 }}
-                    >
-                      <Button
-                        size={isMobile ? 'default' : 'lg'}
-                        className="rounded bg-white font-semibold text-blue-600 shadow-lg transition-colors duration-200 hover:bg-blue-50"
-                      >
-                        {slides[currentSlide]?.cta?.text}
-                      </Button>
-                    </motion.div>
-                  )}
-                </motion.div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+          className="block h-full w-full object-cover"
+        />
       </AnimatePresence>
 
       {showDots && (

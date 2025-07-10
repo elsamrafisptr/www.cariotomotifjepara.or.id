@@ -1,27 +1,11 @@
 import CarouselHeadline from './CarouselHeadline'
 import ServicesCard from './ServicesCard'
 
-export interface CarouselSlide {
-  id: string
-  title: string
-  subtitle?: string
-  description?: string
-  image?: string
-  badges?: Array<{
-    text: string
-    type: 'discount' | 'promo' | 'info'
-  }>
-  cta?: {
-    text: string
-    href: string
-  }
-}
-
 const Home = () => {
   return (
     <section className="min-h-screen w-full">
       <CarouselHeadline
-        slides={[]}
+        slides={['/banner_1.webp', '/banner_2.avif', '/banner_3.webp']}
         autoPlay={true}
         autoPlayInterval={4000}
         showNavigation={true}

@@ -14,7 +14,7 @@ const ServiceCard = ({
   links: string[] | undefined
 }) => {
   return (
-    <Card className="border border-gray-200 transition-all duration-300 hover:cursor-pointer hover:border-blue-300">
+    <Card className="border border-gray-200 shadow-none transition-all duration-300 hover:cursor-pointer hover:border-blue-600">
       <CardContent className="p-8">
         <div className="mb-6">
           <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600">
