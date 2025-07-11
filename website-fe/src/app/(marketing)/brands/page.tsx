@@ -8,7 +8,7 @@ const BrandsPage = () => {
     <section className="min-h-screen w-full bg-white px-5 py-12 sm:px-30">
       <div>
         <h1 className="text-3xl font-semibold">Brand/Merek Motor Tersedia</h1>
-        <div className="mt-4 grid grid-cols-2 items-center gap-4 sm:gap-6 md:mt-6 md:grid-cols-4 md:gap-8">
+        <div className="mt-4 grid grid-cols-2 items-center gap-4 sm:gap-6 md:mt-6 md:grid-cols-3 md:gap-8">
           {BrandMarquee.map((item, index) => {
             return (
               <Link

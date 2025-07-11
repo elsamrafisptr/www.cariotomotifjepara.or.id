@@ -1,4 +1,4 @@
-import { Brain, Compass, Server } from 'lucide-react'
+import { HandCoinsIcon, HandshakeIcon, TrophyIcon, ZapIcon } from 'lucide-react'
 
 import BenefitCard from '@/components/elements/BenefitCard'
 import ServiceCard from '@/components/elements/ServiceCard'
@@ -27,26 +27,26 @@ const ServicesCard = () => {
 
   const services = [
     {
-      icon: Server,
+      icon: HandCoinsIcon,
       title: 'Harga Transparan & Terbaik',
       description:
         'Kami selalu memberikan informasi harga yang jelas di awal dan tanpa biaya tersembunyi. Anda mendapatkan layanan terbaik untuk setiap rupiah yang Anda keluarkan.',
       links: ['web hosting', 'VPS hosting']
     },
     {
-      icon: Brain,
+      icon: ZapIcon,
       title: 'Pembelian Tanpa Ribet',
       description:
         'Proses beli kendaraan seharusnya menyenangkan, bukan melelahkan. Sistem kami bisa menyelesaikan pembelian dengan cepat, mudah, dan bebas stres.'
     },
     {
-      icon: Compass,
+      icon: HandshakeIcon,
       title: 'Layanan Terpercaya',
       description:
         'Tim kami siap mendampingi dengan layanan ramah, responsif, berpengalaman, dan terpercaya. Setiap pelanggan adalah mitra jangka panjang.'
     },
     {
-      icon: Compass,
+      icon: TrophyIcon,
       title: 'Jaminan Kepuasan & Kenyamanan',
       description:
         'Mulai dari layanan, proses pembelian, hingga after-sales support, semuanya dirancang agar Anda merasa nyaman, aman, dan yakin telah membuat pilihan yang tepat.'
