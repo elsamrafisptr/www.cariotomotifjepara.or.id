@@ -144,8 +144,17 @@ const PureNavbar = () => {
               </SheetTrigger>
               <SheetContent side="right" className="w-10/12 px-6 py-4 sm:w-96">
                 <div className="mt-6 flex flex-col space-y-6">
-                  <nav className="flex flex-col space-y-4">
+                  <nav className="mt-4 flex flex-col space-y-2">
                     {/* MAKE A CHANGE HERE */}
+                    {simpleItems.map(item => (
+                      <Link
+                        key={item.title}
+                        href={item.href}
+                        className="flex w-full items-center rounded-lg px-3 py-3 text-left text-base font-medium text-gray-700 transition-colors duration-200 hover:bg-gray-50 hover:text-blue-600"
+                      >
+                        {item.title}
+                      </Link>
+                    ))}
                   </nav>
                 </div>
               </SheetContent>
