@@ -18,6 +18,9 @@ const Product = () => {
               price={item.otrPrice}
               rating={4.2}
               reviewCount={504}
+              originalPrice={item.standardPrice}
+              transmission={item.transmission}
+              fuel={item.fuelType}
             />
           )
         })}

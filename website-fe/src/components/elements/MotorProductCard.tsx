@@ -1,9 +1,9 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 
-import { EyeIcon, MessageCircleIcon, StarIcon } from 'lucide-react'
-import { useState } from 'react'
+import { LeafIcon, MessageCircleIcon, StarIcon } from 'lucide-react'
 
 import { Badge } from '../ui/badge'
 import { Button } from '../ui/button'
@@ -16,7 +16,9 @@ import {
   CarouselPrevious
 } from '../ui/carousel'
 
-import { formatPrice } from '@/lib/utils'
+import { FuelType, TransmissionType } from '@/common/types/new-motorcylce'
+
+import { cn, formatPrice } from '@/lib/utils'
 
 interface MotorProductCardProps {
   title: string
@@ -26,9 +28,8 @@ interface MotorProductCardProps {
   originalPrice?: number
   rating: number
   reviewCount: number
-  isPopular?: boolean
-  isNew?: boolean
-  onInquire?: () => void
+  transmission: TransmissionType
+  fuel: FuelType
 }
 
 const renderStars = (rating: number) => {
@@ -59,36 +60,33 @@ const MotorProductCard = ({
   originalPrice,
   rating,
   reviewCount,
-  isPopular = false,
-  isNew = false,
-  onInquire
+  transmission,
+  fuel
 }: MotorProductCardProps) => {
-  const [viewCount] = useState(Math.floor(Math.random() * 500) + 100)
-
-  const discountPercentage = originalPrice
-    ? Math.round(((originalPrice - price) / originalPrice) * 100)
-    : 0
-
   return (
     <Card className="group relative overflow-hidden bg-white py-0 shadow-none">
       {/* Badges */}
-      <div className="absolute top-3 left-3 z-10 flex flex-col gap-2">
-        {isNew && (
-          <Badge variant="destructive" className="bg-green-500 hover:bg-green-600">
-            BARU
+      <div className="absolute top-3 left-3 z-10 flex items-center gap-2">
+        {transmission && (
+          <Badge
+            variant="destructive"
+            className="bg-blue-50 font-normal text-blue-700 hover:bg-blue-100"
+          >
+            {transmission}
           </Badge>
         )}
-        {isPopular && (
+        {fuel && (
           <Badge
             variant="secondary"
-            className="bg-orange-500 text-white hover:bg-orange-600"
+            className={cn(
+              'font-normal',
+              fuel === FuelType.Petrol
+                ? 'bg-yellow-50 text-yellow-700 hover:bg-yellow-100'
+                : 'bg-green-50 text-green-700 hover:bg-green-100'
+            )}
           >
-            POPULER
-          </Badge>
-        )}
-        {discountPercentage > 0 && (
-          <Badge variant="destructive" className="bg-red-500 hover:bg-red-600">
-            -{discountPercentage}%
+            {fuel === FuelType.Petrol ? null : <LeafIcon />}
+            {fuel}
           </Badge>
         )}
       </div>
@@ -105,7 +103,7 @@ const MotorProductCard = ({
                       src={src || '/placeholder.svg'}
                       alt={`${brand} ${title} - Image ${index + 1}`}
                       fill
-                      className="bg-gray-200 object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="bg-gray-200 object-cover transition-transform duration-300"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       priority={index === 0}
                     />
@@ -120,21 +118,19 @@ const MotorProductCard = ({
               </>
             )}
           </Carousel>
-
-          {/* Image Counter */}
-          {images.length > 1 && (
-            <div className="absolute right-3 bottom-3 rounded-full bg-black/60 px-2 py-1 text-xs text-white backdrop-blur-sm">
-              1/{images.length}
-            </div>
-          )}
         </div>
 
         {/* Content */}
         <div className="space-y-3 p-4">
           {/* Brand and Title */}
           <div>
-            <p className="text-sm font-medium text-gray-600">{brand}</p>
-            <h3 className="line-clamp-2 leading-tight font-semibold text-gray-900 transition-colors group-hover:text-blue-600">
+            <Link
+              href={`/brands/motorcycle/${brand.toLocaleLowerCase()}`}
+              className="text-sm font-medium text-gray-600 hover:underline"
+            >
+              {brand}
+            </Link>
+            <h3 className="line-clamp-2 text-base leading-tight font-semibold text-gray-900 transition-colors md:text-xl">
               {title}
             </h3>
           </div>
@@ -150,21 +146,15 @@ const MotorProductCard = ({
             </span>
           </div>
 
-          {/* View Count */}
-          <div className="flex items-center gap-1 text-sm text-gray-500">
-            <EyeIcon className="h-4 w-4" />
-            <span>{viewCount.toLocaleString('id-ID')} dilihat</span>
-          </div>
-
           {/* Price */}
           <div className="space-y-1">
             <p className="text-sm text-gray-600">Mulai dari</p>
-            <div className="flex items-center gap-2">
-              <span className="text-xl font-bold text-gray-900">
+            <div className="flex flex-col items-start">
+              <span className="text-2xl font-bold text-gray-900 md:text-4xl">
                 {formatPrice(price)}
               </span>
               {originalPrice && (
-                <span className="text-sm text-gray-500 line-through">
+                <span className="text-xs text-gray-500 line-through md:text-sm">
                   {formatPrice(originalPrice)}
                 </span>
               )}
@@ -172,20 +162,10 @@ const MotorProductCard = ({
           </div>
 
           {/* Action Button */}
-          <Button
-            onClick={onInquire}
-            className="w-full bg-blue-600 py-2.5 font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:shadow-lg"
-          >
-            <MessageCircleIcon className="mr-2 h-4 w-4" />
+          <Button className="flex w-full items-center bg-blue-600 py-2.5 font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:shadow-lg">
+            <MessageCircleIcon className="h-4 w-4" />
             Tanyakan Sekarang
           </Button>
-
-          {/* Trust Indicators */}
-          <div className="flex items-center justify-between border-t pt-2 text-xs text-gray-500">
-            <span>✓ Garansi Resmi</span>
-            <span>✓ Cicilan 0%</span>
-            <span>✓ Trade-in</span>
-          </div>
         </div>
       </CardContent>
     </Card>
