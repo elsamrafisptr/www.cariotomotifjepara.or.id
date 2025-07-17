@@ -90,6 +90,12 @@ const positionClasses = {
   'top-left': 'top-6 left-6'
 }
 
+const closeButtonPositionClasses = {
+  sm: '-top-1 -right-1',
+  md: '-top-0.5 -right-0.5',
+  lg: 'top-0 right-0'
+}
+
 export default function WhatsAppFloatingButton({
   phoneNumber,
   accountName = 'Customer Support',
@@ -122,6 +128,7 @@ export default function WhatsAppFloatingButton({
   const [isOpen, setIsOpen] = useState(false)
   const [isTyping, setIsTyping] = useState(true)
   const [showMessage, setShowMessage] = useState(false)
+  const [isDismissed, setIsDismissed] = useState(false)
 
   const timeNow = useMemo(
     () => new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
@@ -153,6 +160,11 @@ export default function WhatsAppFloatingButton({
     setShowMessage(false)
     onClose?.()
   }, [onClose])
+
+  const handleDismiss = useCallback((event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation()
+    setIsDismissed(true)
+  }, [])
 
   const handleSubmit = useCallback(
     (event: React.FormEvent<HTMLFormElement>) => {
@@ -199,7 +211,7 @@ export default function WhatsAppFloatingButton({
     return () => document.removeEventListener('keydown', onKey)
   }, [allowEsc, isOpen, handleClose])
 
-  if (!show) return null
+  if (!show || isDismissed) return null
 
   return (
     <>
@@ -215,6 +227,22 @@ export default function WhatsAppFloatingButton({
           className
         )}
       >
+        {!isOpen && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3 }}
+            onClick={handleDismiss}
+            className={cn(
+              'absolute z-20 flex h-4.5 w-4.5 cursor-pointer items-center justify-center rounded-full bg-gray-950 transition-all hover:scale-110 hover:bg-black',
+              closeButtonPositionClasses[size]
+            )}
+            aria-label="Dismiss button"
+          >
+            <X className="h-3 w-3 text-white" />
+          </motion.button>
+        )}
+
         {/* Tooltip - Always visible when enabled and chat is closed */}
         {tooltipText && showTooltip && !isOpen && (
           <motion.div
