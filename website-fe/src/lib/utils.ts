@@ -37,4 +37,20 @@ const sanitizeText = (text: string) => {
   return text.replace('<has_function_call>', '')
 }
 
-export { cn, getBaseUrl, getLocalStorage, sanitizeText, generatePageMetadata }
+const formatPrice = (price: number) => {
+  return new Intl.NumberFormat('id-ID', {
+    style: 'currency',
+    currency: 'IDR',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
+  }).format(price)
+}
+
+export {
+  cn,
+  getBaseUrl,
+  getLocalStorage,
+  sanitizeText,
+  generatePageMetadata,
+  formatPrice
+}

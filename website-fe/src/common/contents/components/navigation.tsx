@@ -123,5 +123,6 @@ export const navigationItems = [
 export const simpleItems = [
   { title: 'Beranda', href: '/' },
   { title: 'Tentang Kami', href: '/about' },
-  { title: 'Brand/Merek', href: '/brands' }
+  { title: 'Brand/Merek', href: '/brands' },
+  { title: 'Semua Produk', href: '/products' }
 ]
