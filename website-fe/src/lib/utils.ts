@@ -46,11 +46,15 @@ const formatPrice = (price: number) => {
   }).format(price)
 }
 
+const imageProviderBaseURL =
+  'https://ik.imagekit.io/a5rn4awa3digi2tal1/d3d3LmNhcmlvdG9tb3RpZmplcGFyYS5vci5pZA'
+
 export {
   cn,
   getBaseUrl,
   getLocalStorage,
   sanitizeText,
   generatePageMetadata,
-  formatPrice
+  formatPrice,
+  imageProviderBaseURL
 }

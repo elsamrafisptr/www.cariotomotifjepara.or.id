@@ -9,801 +9,759 @@ import {
 const honda_new_motorcycles: NewMotorcycleDetails[] = [
   {
     title: 'CBR 150 R Tricolor STD',
-    year: 2024,
     type: MotorcycleType.Sport,
     brand: MotorcycleBrands.Honda,
-    variant: 'STD',
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 38000000,
-    downPayment: 4000000,
-    listingPrice: 37000000,
-    standardPrice: 38500000,
-    discountPrice: 36500000,
-    moreInfo: 1234,
-    whatsappClicks: 56,
-    productUrlClicks: 180,
-    bla: 'DOHC 6-speed, Liquid-cooled, twin LED headlamps, digital meter'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'CBR 150 R Tricolor ABS',
-    year: 2024,
     type: MotorcycleType.Sport,
     brand: MotorcycleBrands.Honda,
-    variant: 'STD',
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 38000000,
-    downPayment: 4000000,
-    listingPrice: 37000000,
-    standardPrice: 38500000,
-    discountPrice: 36500000,
-    moreInfo: 1234,
-    whatsappClicks: 56,
-    productUrlClicks: 180,
-    bla: 'DOHC 6-speed, Liquid-cooled, twin LED headlamps, digital meter'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'CBR 150 R Victory Matte Black STD',
-    year: 2024,
     type: MotorcycleType.Sport,
     brand: MotorcycleBrands.Honda,
-    variant: 'STD',
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 38000000,
-    downPayment: 4000000,
-    listingPrice: 37000000,
-    standardPrice: 38500000,
-    discountPrice: 36500000,
-    moreInfo: 1234,
-    whatsappClicks: 56,
-    productUrlClicks: 180,
-    bla: 'DOHC 6-speed, Liquid-cooled, twin LED headlamps, digital meter'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'CBR 150 R Victory Matte Black ABS',
-    year: 2024,
     type: MotorcycleType.Sport,
     brand: MotorcycleBrands.Honda,
-    variant: 'STD',
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 38000000,
-    downPayment: 4000000,
-    listingPrice: 37000000,
-    standardPrice: 38500000,
-    discountPrice: 36500000,
-    moreInfo: 1234,
-    whatsappClicks: 56,
-    productUrlClicks: 180,
-    bla: 'DOHC 6-speed, Liquid-cooled, twin LED headlamps, digital meter'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'CBR 150 R Racing Red STD',
-    year: 2024,
     type: MotorcycleType.Sport,
     brand: MotorcycleBrands.Honda,
-    variant: 'STD',
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 38000000,
-    downPayment: 4000000,
-    listingPrice: 37000000,
-    standardPrice: 38500000,
-    discountPrice: 36500000,
-    moreInfo: 1234,
-    whatsappClicks: 56,
-    productUrlClicks: 180,
-    bla: 'DOHC 6-speed, Liquid-cooled, twin LED headlamps, digital meter'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Vario 160 Grande Matte Blue ABS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Vario 160 Grande Matte White ABS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Vario 160 Grande Matte Black ABS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Vario 160 Grande Matte Black CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Vario 160 Grande Matte White CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Vario 160 Active Matte Blue CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Vario 160 Active Matte Black CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Vario 160 Active Matte Red CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Stylo 160 Royal Green ABS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Stylo 160 Royal Matte White ABS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Stylo 160 Royal Matte Black ABS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Stylo 160 Glam Red CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Stylo 160 Glam Black CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Stylo 160 Glam Beige CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'PCX 160 Roadsync Red',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'PCX 160 Roadsync Matte Black',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'PCX 160 Phenomenal White ABS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'PCX 160 Phenomenal Matte Red ABS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'PCX 160 Phenomenal Matte Silver ABS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'PCX 160 Phenomenal Matte Black ABS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'PCX 160 Exceptional White CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'PCX 160 Exceptional Red CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'PCX 160 Exceptional Matte Silver CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'PCX 160 Exceptional Black CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'ADV 160 Tough Matte Brown ABS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'ADV 160 Tough Matte Red ABS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'ADV 160 Tough Matte Black ABS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'ADV 160 Tough Matte White ABS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'ADV 160 Dynamic Gray CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'ADV 160 Dynamic White CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'ADV 160 Dynamic Red CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'ADV 160 Dynamic Black CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Vario 125 Advance Matte Red CBS-ISS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Vario 125 Advance Matte Blue CBS-ISS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Vario 125 Advance Matte Black CBS-ISS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Vario 125 Sporty Red Black CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   },
   {
     title: 'Vario 125 Sporty Matte Black CBS',
-    year: 2024,
     type: MotorcycleType.Sport,
-    brand: 'Honda',
-    variant: '150R',
+    brand: MotorcycleBrands.Honda,
     transmission: TransmissionType.Manual,
-    engineSize: 150,
     fuelType: FuelType.Petrol,
-    otrPrice: 25000000,
-    downPayment: 3500000,
-    listingPrice: 24500000,
-    standardPrice: 26000000,
-    discountPrice: 24000000,
-    moreInfo: 1238,
-    whatsappClicks: 22,
-    productUrlClicks: 60,
-    bla: 'Compact sporty design, digital speedometer, DOHC engine'
+    pricing: {
+      otrPrice: 38000000,
+      downPayment: 4000000,
+      listingPrice: 37000000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    }
   }
 ]
 

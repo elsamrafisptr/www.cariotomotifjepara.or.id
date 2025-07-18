@@ -9,7 +9,13 @@ const baseConfig: NextConfig = {
   poweredByHeader: true,
   serverExternalPackages: [],
   images: {
-    remotePatterns: []
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ik.imagekit.io',
+        port: ''
+      }
+    ]
   },
   turbopack: {
     resolveAlias: {

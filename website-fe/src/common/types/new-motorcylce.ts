@@ -1,11 +1,12 @@
 enum TransmissionType {
   Manual = 'Manual',
-  Automatic = 'Automatic'
+  Automatic = 'Matic'
 }
 
 enum FuelType {
-  Petrol = 'Petrol',
-  Electric = 'Electric'
+  Petrol = 'Bensin',
+  Electric = 'Electric (EV)',
+  Hydrogen = 'Hydrogen (Air)'
 }
 
 enum MotorcycleType {
@@ -19,13 +20,23 @@ enum MotorcycleType {
 
 interface BaseMotorcycle {
   title: string
-  year: number
   type: MotorcycleType
   brand: string
-  variant: string
   transmission: TransmissionType
-  engineSize: number
   fuelType: FuelType
+}
+
+interface MotorcycleVariants {
+  category: string
+  sub_category: string
+}
+
+interface MotorcycleMoreInformation {
+  reviews: {
+    rating: number
+    total: number
+  }
+  images: string[]
 }
 
 interface MotorcycleTechnicalSpecifications {
@@ -37,12 +48,11 @@ interface MotorcycleKeyFeatures {
 }
 
 interface MotorcyclePricing {
-  otrPrice: number
   downPayment: number
+  otrPrice: number
   listingPrice: number
   standardPrice: number
   discountPrice: number
-  moreInfo?: number
 }
 
 interface MotorcycleConversionMetrics {
@@ -50,16 +60,20 @@ interface MotorcycleConversionMetrics {
   productUrlClicks: number
 }
 
-interface NewMotorcycleDetails
-  extends BaseMotorcycle,
-    MotorcyclePricing,
-    MotorcycleConversionMetrics,
-    MotorcycleTechnicalSpecifications,
-    MotorcycleKeyFeatures {}
+interface NewMotorcycleDetails extends BaseMotorcycle {
+  pricing: MotorcyclePricing
+  variants: MotorcycleVariants
+  more_information?: MotorcycleMoreInformation
+  metrics?: MotorcycleConversionMetrics
+  key_features?: MotorcycleKeyFeatures
+  technical_specifications?: MotorcycleTechnicalSpecifications
+}
 
 export type {
   BaseMotorcycle,
   MotorcyclePricing,
+  MotorcycleVariants,
+  MotorcycleMoreInformation,
   MotorcycleConversionMetrics,
   NewMotorcycleDetails,
   MotorcycleKeyFeatures,

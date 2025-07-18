@@ -103,7 +103,7 @@ const MotorProductCard = ({
                       src={src || '/placeholder.svg'}
                       alt={`${brand} ${title} - Image ${index + 1}`}
                       fill
-                      className="bg-gray-200 object-cover transition-transform duration-300"
+                      className="bg-white object-cover transition-transform duration-300"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       priority={index === 0}
                     />
@@ -113,8 +113,8 @@ const MotorProductCard = ({
             </CarouselContent>
             {images.length > 1 && (
               <>
-                <CarouselPrevious className="absolute top-1/2 left-2 -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:cursor-pointer hover:bg-white" />
-                <CarouselNext className="absolute top-1/2 right-2 -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:cursor-pointer hover:bg-white" />
+                <CarouselPrevious className="absolute top-1/2 left-2 -translate-y-1/2 bg-white/80 opacity-0 backdrop-blur-sm group-hover:opacity-100 hover:cursor-pointer hover:bg-white disabled:opacity-0" />
+                <CarouselNext className="absolute top-1/2 right-2 -translate-y-1/2 bg-white/80 opacity-0 backdrop-blur-sm group-hover:opacity-100 hover:cursor-pointer hover:bg-white disabled:opacity-0" />
               </>
             )}
           </Carousel>
