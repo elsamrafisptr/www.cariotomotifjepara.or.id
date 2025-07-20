@@ -296,6 +296,78 @@ const honda_new_motorcycles: NewMotorcycleDetails[] = [
         total: 1066
       }
     }
+  },
+  {
+    title: 'BeAT Street Brown',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 19400000,
+      downPayment: 4000000,
+      listingPrice: 19801000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL +
+          '/cari-otomotif-jepara/brands/honda/honda-motorcycle-beat-street-brown.webp',
+        imageProviderBaseURL +
+          '/cari-otomotif-jepara/brands/honda/honda-motorcycle-beat-street-placeholder-1.webp',
+        imageProviderBaseURL +
+          '/cari-otomotif-jepara/brands/honda/honda-motorcycle-beat-street-placeholder-2.webp',
+        imageProviderBaseURL +
+          '/cari-otomotif-jepara/brands/honda/honda-motorcycle-beat-street-placeholder-3.webp',
+        imageProviderBaseURL +
+          '/cari-otomotif-jepara/brands/honda/honda-motorcycle-beat-street-placeholder-4.webp'
+      ],
+      reviews: {
+        rating: 4.85,
+        total: 176
+      }
+    }
+  },
+  {
+    title: 'BeAT Street Black',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 19400000,
+      downPayment: 4000000,
+      listingPrice: 19801000,
+      standardPrice: 38500000,
+      discountPrice: 36500000
+    },
+    variants: {
+      category: '',
+      sub_category: ''
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL +
+          '/cari-otomotif-jepara/brands/honda/honda-motorcycle-beat-street-black.webp',
+        imageProviderBaseURL +
+          '/cari-otomotif-jepara/brands/honda/honda-motorcycle-beat-street-placeholder-1.webp',
+        imageProviderBaseURL +
+          '/cari-otomotif-jepara/brands/honda/honda-motorcycle-beat-street-placeholder-2.webp',
+        imageProviderBaseURL +
+          '/cari-otomotif-jepara/brands/honda/honda-motorcycle-beat-street-placeholder-3.webp',
+        imageProviderBaseURL +
+          '/cari-otomotif-jepara/brands/honda/honda-motorcycle-beat-street-placeholder-4.webp'
+      ],
+      reviews: {
+        rating: 4.85,
+        total: 176
+      }
+    }
   }
 
   // {
