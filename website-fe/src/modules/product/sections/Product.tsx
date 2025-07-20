@@ -2,8 +2,6 @@ import React from 'react'
 
 import honda_new_motorcycles from '@/common/contents/products/honda/new-motorcycle-contents'
 
-import { imageProviderBaseURL } from '@/lib/utils'
-
 import MotorProductCard from '@/components/elements/MotorProductCard'
 
 const Product = () => {
@@ -16,15 +14,11 @@ const Product = () => {
               key={index}
               title={item.title}
               brand={item.brand}
-              images={[
-                imageProviderBaseURL +
-                  '/cari-otomotif-jepara/brands/honda/honda-motorcycle-beat-funk-red-black-cbs.webp',
-                ''
-              ]}
+              images={item.more_information!.images}
               price={item.pricing.otrPrice}
-              rating={4.2}
-              reviewCount={504}
-              originalPrice={item.pricing.standardPrice}
+              rating={item.more_information!.reviews.rating}
+              reviewCount={item.more_information!.reviews.total}
+              originalPrice={item.pricing.listingPrice}
               transmission={item.transmission}
               fuel={item.fuelType}
             />

@@ -3,7 +3,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { LeafIcon, MessageCircleIcon, StarIcon } from 'lucide-react'
+import {
+  BikeIcon,
+  FuelIcon,
+  MessageCircleIcon,
+  PlugZapIcon,
+  StarIcon
+} from 'lucide-react'
 
 import { Badge } from '../ui/badge'
 import { Button } from '../ui/button'
@@ -70,8 +76,9 @@ const MotorProductCard = ({
         {transmission && (
           <Badge
             variant="destructive"
-            className="bg-blue-50 font-normal text-blue-700 hover:bg-blue-100"
+            className="cursor-pointer rounded-full bg-sky-600 font-normal text-sky-50 hover:bg-sky-700"
           >
+            <BikeIcon />
             {transmission}
           </Badge>
         )}
@@ -79,13 +86,13 @@ const MotorProductCard = ({
           <Badge
             variant="secondary"
             className={cn(
-              'font-normal',
+              'cursor-pointer rounded-full font-normal',
               fuel === FuelType.Petrol
-                ? 'bg-yellow-50 text-yellow-700 hover:bg-yellow-100'
-                : 'bg-green-50 text-green-700 hover:bg-green-100'
+                ? 'bg-yellow-600 text-yellow-50 hover:bg-yellow-700'
+                : 'bg-green-600 text-green-50 hover:bg-green-700'
             )}
           >
-            {fuel === FuelType.Petrol ? null : <LeafIcon />}
+            {fuel === FuelType.Petrol ? <FuelIcon /> : <PlugZapIcon />}
             {fuel}
           </Badge>
         )}
@@ -139,7 +146,7 @@ const MotorProductCard = ({
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1">{renderStars(rating)}</div>
             <span className="text-sm font-medium text-gray-900">
-              {rating.toFixed(1)}
+              {rating.toFixed(2)}
             </span>
             <span className="text-sm text-gray-500">
               ({reviewCount.toLocaleString('id-ID')} ulasan)
