@@ -10,6 +10,7 @@ import {
   PlugZapIcon,
   StarIcon
 } from 'lucide-react'
+import { useCallback } from 'react'
 
 import { Badge } from '../ui/badge'
 import { Button } from '../ui/button'
@@ -69,6 +70,17 @@ const MotorProductCard = ({
   transmission,
   fuel
 }: MotorProductCardProps) => {
+  const handleContact = useCallback(() => {
+    const cleanPhone = '628132614262'.replace(/[^\d+]/g, '')
+    const encoded = encodeURIComponent(
+      `Halo Pak Praba, saya ingin tanya tentang ${brand} ${title}`.trim()
+    )
+    window.open(
+      `https://api.whatsapp.com/send/?phone=${cleanPhone}&text=${encoded}`,
+      '_blank'
+    )
+  }, [brand, title])
+
   return (
     <Card className="group relative overflow-hidden bg-white py-0 shadow-none">
       {/* Badges */}
@@ -169,7 +181,10 @@ const MotorProductCard = ({
           </div>
 
           {/* Action Button */}
-          <Button className="flex w-full items-center bg-blue-600 py-2.5 font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:shadow-lg">
+          <Button
+            onClick={handleContact}
+            className="flex w-full items-center bg-blue-600 py-2.5 font-medium text-white transition-all duration-200 hover:cursor-pointer hover:bg-blue-700"
+          >
             <MessageCircleIcon className="h-4 w-4" />
             Tanyakan Sekarang
           </Button>
