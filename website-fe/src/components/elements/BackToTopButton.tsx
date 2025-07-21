@@ -108,7 +108,7 @@ export default function BackToTopButton({
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
           className={cn(
-            'fixed z-50 hover:cursor-pointer',
+            'fixed z-40 hover:cursor-pointer',
             positionClasses[position],
             className
           )}

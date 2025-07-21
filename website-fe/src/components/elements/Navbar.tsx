@@ -80,7 +80,7 @@ const PureNavbar = () => {
                   key={item.title}
                   variant="ghost"
                   asChild
-                  className="h-10 px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-gray-50 hover:text-blue-600"
+                  className="h-10 cursor-pointer px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-gray-50 hover:text-blue-600"
                 >
                   <Link href={item.href}>{item.title}</Link>
                 </Button>
@@ -117,13 +117,13 @@ const PureNavbar = () => {
               <Button
                 onClick={() =>
                   window.open(
-                    'https://api.whatsapp.com/send/?phone=628132614262&text=Halo%20Pak%20Praba%2C%20saya%20ingin%20cari-cari%20otomotif%20di%20jepara%20nih',
+                    'https://api.whatsapp.com/send/?phone=628122851744&text=Halo%20Pak%20Praba%2C%20saya%20ingin%20cari-cari%20otomotif%20di%20jepara%20nih',
                     '_blank',
                     'noopener,noreferrer'
                   )
                 }
                 size={'lg'}
-                className="bg-blue-600 text-white transition-colors duration-200 hover:bg-blue-700"
+                className="cursor-pointer bg-blue-600 text-white transition-colors duration-200 hover:bg-blue-700"
               >
                 <Phone />
                 Pesan Sekarang

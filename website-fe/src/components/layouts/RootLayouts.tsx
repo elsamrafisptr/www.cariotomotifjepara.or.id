@@ -36,7 +36,7 @@ const RootLayouts = ({
       <main className="">
         <Suspense fallback={<Loading />}>
           <FloatingWhatsApp
-            phoneNumber="628132614262"
+            phoneNumber="628122851744"
             accountName="Pak Probo (Admin 1)"
             avatar="/admin_1.jpg"
             initialMessageByServer="Halo, apa ada yang bisa saya bantu buat cari otomotif keinginan anda? 🙏"

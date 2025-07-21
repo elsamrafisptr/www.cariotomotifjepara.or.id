@@ -71,7 +71,7 @@ const MotorProductCard = ({
   fuel
 }: MotorProductCardProps) => {
   const handleContact = useCallback(() => {
-    const cleanPhone = '628132614262'.replace(/[^\d+]/g, '')
+    const cleanPhone = '628122851744'.replace(/[^\d+]/g, '')
     const encoded = encodeURIComponent(
       `Halo Pak Praba, saya ingin tanya tentang ${brand} ${title}`.trim()
     )

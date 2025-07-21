@@ -324,7 +324,7 @@ export default function WhatsAppFloatingButton({
               exit={{ opacity: 0, scale: 0.8, y: 20 }}
               transition={{ duration: 0.2 }}
               className={cn(
-                'absolute overflow-hidden rounded-lg bg-white shadow-2xl',
+                'absolute z-[999999] overflow-hidden rounded-lg bg-white shadow-2xl',
                 'border border-gray-200',
                 darkMode && 'border-gray-700 bg-gray-800',
                 position.includes('right') ? 'right-0' : 'left-0',
