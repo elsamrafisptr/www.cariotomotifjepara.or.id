@@ -50,6 +50,10 @@ const PureNavbar = () => {
   //   }
   // }, [])
 
+  const handleMobileLinkClick = () => {
+    setIsMobileMenuOpen(false)
+  }
+
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b bg-white backdrop-blur supports-[backdrop-filter]:bg-white">
@@ -151,6 +155,7 @@ const PureNavbar = () => {
                         key={item.title}
                         href={item.href}
                         className="flex w-full items-center rounded-lg px-3 py-3 text-left text-base font-medium text-gray-700 transition-colors duration-200 hover:bg-gray-50 hover:text-blue-600"
+                        onClick={handleMobileLinkClick}
                       >
                         {item.title}
                       </Link>
