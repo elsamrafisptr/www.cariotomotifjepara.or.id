@@ -6,6 +6,7 @@ import Link from 'next/link'
 import {
   BikeIcon,
   FuelIcon,
+  InfoIcon,
   MessageCircleIcon,
   PlugZapIcon,
   StarIcon
@@ -22,6 +23,7 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '../ui/carousel'
+import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip'
 
 import { FuelType, TransmissionType } from '@/common/types/new-motorcylce'
 
@@ -110,7 +112,7 @@ const MotorProductCard = ({
         )}
       </div>
 
-      <CardContent className="p-0">
+      <CardContent className="flex h-full flex-col p-0">
         {/* Image Carousel */}
         <div className="relative">
           <Carousel className="w-full">
@@ -139,8 +141,7 @@ const MotorProductCard = ({
           </Carousel>
         </div>
 
-        {/* Content */}
-        <div className="space-y-3 p-4">
+        <div className="flex-grow space-y-3 p-4">
           {/* Brand and Title */}
           <div>
             <Link
@@ -169,9 +170,24 @@ const MotorProductCard = ({
           <div className="space-y-1">
             <p className="text-sm text-gray-600">Mulai dari</p>
             <div className="flex flex-col items-start">
-              <span className="text-2xl font-bold text-gray-900 md:text-4xl">
-                {formatPrice(price)}
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="text-2xl font-bold text-gray-900 md:text-4xl">
+                  {formatPrice(price)}
+                </span>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <InfoIcon className="size-4 cursor-pointer text-gray-600 transition-colors duration-150 hover:text-blue-600" />
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <div className="flex flex-col">
+                      <p className="max-w-48">*Bukan merupakan harga pasti</p>
+                      <p className="max-w-48">
+                        Untuk harga pastinya dan ketersediaan bisa tanyakan admin
+                      </p>
+                    </div>
+                  </TooltipContent>
+                </Tooltip>
+              </div>
               {originalPrice && (
                 <span className="text-xs text-gray-500 line-through md:text-sm">
                   {formatPrice(originalPrice)}
@@ -179,16 +195,15 @@ const MotorProductCard = ({
               )}
             </div>
           </div>
-
-          {/* Action Button */}
-          <Button
-            onClick={handleContact}
-            className="flex w-full items-center bg-blue-600 py-2.5 font-medium text-white transition-all duration-200 hover:cursor-pointer hover:bg-blue-700"
-          >
-            <MessageCircleIcon className="h-4 w-4" />
-            Tanyakan Sekarang
-          </Button>
         </div>
+
+        <Button
+          onClick={handleContact}
+          className="mx-4 mb-4 flex items-center bg-blue-600 py-2.5 font-medium text-white transition-all duration-200 hover:cursor-pointer hover:bg-blue-700"
+        >
+          <MessageCircleIcon className="h-4 w-4" />
+          Tanyakan Sekarang
+        </Button>
       </CardContent>
     </Card>
   )
