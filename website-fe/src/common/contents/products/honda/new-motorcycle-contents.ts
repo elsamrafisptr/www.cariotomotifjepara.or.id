@@ -368,6 +368,897 @@ const honda_new_motorcycles: NewMotorcycleDetails[] = [
         total: 176
       }
     }
+  },
+  {
+    title: 'Genio Fabuolus Matte Green CBS-ISS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 20300000,
+      downPayment: 0,
+      listingPrice: 20695000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Genio'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.17,
+        total: 77
+      }
+    }
+  },
+  {
+    title: 'Genio Fabuolus Matte Blue CBS-ISS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 20300000,
+      downPayment: 0,
+      listingPrice: 20695000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Genio'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.17,
+        total: 77
+      }
+    }
+  },
+  {
+    title: 'Genio Fabuolus Matte Black CBS-ISS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 20300000,
+      downPayment: 0,
+      listingPrice: 20695000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Genio'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.17,
+        total: 77
+      }
+    }
+  },
+  {
+    title: 'Genio Radiant Red Black CBS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 20300000,
+      downPayment: 0,
+      listingPrice: 20695000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Genio'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.17,
+        total: 77
+      }
+    }
+  },
+  {
+    title: 'Genio Radiant Silver Black CBS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 20300000,
+      downPayment: 0,
+      listingPrice: 20695000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Genio'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.17,
+        total: 77
+      }
+    }
+  },
+  {
+    title: 'Genio Radiant Black CBS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 20300000,
+      downPayment: 0,
+      listingPrice: 20695000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Genio'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.17,
+        total: 77
+      }
+    }
+  },
+  {
+    title: 'Scoopy Prestige Black',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 23330000,
+      downPayment: 0,
+      listingPrice: 23681000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Scoopy'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.31,
+        total: 343
+      }
+    }
+  },
+  {
+    title: 'Scoopy Prestige White',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 23330000,
+      downPayment: 0,
+      listingPrice: 23681000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Scoopy'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.31,
+        total: 343
+      }
+    }
+  },
+  {
+    title: 'Scoopy Stylish Red',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 23330000,
+      downPayment: 0,
+      listingPrice: 23681000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Scoopy'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.31,
+        total: 343
+      }
+    }
+  },
+  {
+    title: 'Scoopy Stylish Green',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 23330000,
+      downPayment: 0,
+      listingPrice: 23681000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Scoopy'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.31,
+        total: 343
+      }
+    }
+  },
+  {
+    title: 'Scoopy Fashion Blue',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 23330000,
+      downPayment: 0,
+      listingPrice: 23681000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Scoopy'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.31,
+        total: 343
+      }
+    }
+  },
+  {
+    title: 'Scoopy Fashion Brown',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 23330000,
+      downPayment: 0,
+      listingPrice: 23681000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Scoopy'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.31,
+        total: 343
+      }
+    }
+  },
+  {
+    title: 'Scoopy Energetic Silver',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 23330000,
+      downPayment: 0,
+      listingPrice: 23681000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Scoopy'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.31,
+        total: 343
+      }
+    }
+  },
+  {
+    title: 'Scoopy Energetic Red',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 23330000,
+      downPayment: 0,
+      listingPrice: 23681000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Scoopy'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.31,
+        total: 343
+      }
+    }
+  },
+  {
+    title: 'Vario 125 Advance Matte Red CBS-ISS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 25060000,
+      downPayment: 0,
+      listingPrice: 25565000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Vario 125'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.81,
+        total: 489
+      }
+    }
+  },
+  {
+    title: 'Vario 125 Advance Matte Blue CBS-ISS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 25060000,
+      downPayment: 0,
+      listingPrice: 25565000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Vario 125'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.81,
+        total: 489
+      }
+    }
+  },
+  {
+    title: 'Vario 125 Advance Matte Black CBS-ISS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 25060000,
+      downPayment: 0,
+      listingPrice: 25565000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Vario 125'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.81,
+        total: 489
+      }
+    }
+  },
+  {
+    title: 'Vario 125 Sporty Red Black CBS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 25060000,
+      downPayment: 0,
+      listingPrice: 25565000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Vario 125'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.81,
+        total: 489
+      }
+    }
+  },
+  {
+    title: 'Vario 125 Sporty Matte Black CBS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 25060000,
+      downPayment: 0,
+      listingPrice: 25565000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Vario 125'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.81,
+        total: 489
+      }
+    }
+  },
+  {
+    title: 'Vario 160 Grande Matte Blue ABS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 29510000,
+      downPayment: 0,
+      listingPrice: 30981000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Vario 160'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.56,
+        total: 31
+      }
+    }
+  },
+  {
+    title: 'Vario 160 Grande Matte White ABS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 29510000,
+      downPayment: 0,
+      listingPrice: 30981000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Vario 160'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.56,
+        total: 31
+      }
+    }
+  },
+  {
+    title: 'Vario 160 Grande Matte Black ABS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 29510000,
+      downPayment: 0,
+      listingPrice: 30981000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Vario 160'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.56,
+        total: 31
+      }
+    }
+  },
+  {
+    title: 'Vario 160 Grande Matte Black CBS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 29510000,
+      downPayment: 0,
+      listingPrice: 30981000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Vario 160'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.56,
+        total: 31
+      }
+    }
+  },
+  {
+    title: 'Vario 160 Grande Matte White CBS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 29510000,
+      downPayment: 0,
+      listingPrice: 30981000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Vario 160'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.56,
+        total: 31
+      }
+    }
+  },
+  {
+    title: 'Vario 160 Active Matte Blue CBS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 29510000,
+      downPayment: 0,
+      listingPrice: 30981000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Vario 160'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.56,
+        total: 31
+      }
+    }
+  },
+  {
+    title: 'Vario 160 Active Matte Black CBS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 29510000,
+      downPayment: 0,
+      listingPrice: 30981000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Vario 160'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.56,
+        total: 31
+      }
+    }
+  },
+  {
+    title: 'Vario 160 Active Matte Red CBS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 29510000,
+      downPayment: 0,
+      listingPrice: 30981000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Vario 160'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.56,
+        total: 31
+      }
+    }
+  },
+  {
+    title: 'Stylo 160 Royal Green ABS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 31380000,
+      downPayment: 0,
+      listingPrice: 31911000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Stylo 160'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.25,
+        total: 10
+      }
+    }
+  },
+  {
+    title: 'Stylo 160 Royal Matte White ABS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 31380000,
+      downPayment: 0,
+      listingPrice: 31911000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Stylo 160'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.25,
+        total: 10
+      }
+    }
+  },
+  {
+    title: 'Stylo 160 Royal Matte Black ABS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 31380000,
+      downPayment: 0,
+      listingPrice: 31911000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Stylo 160'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.25,
+        total: 10
+      }
+    }
+  },
+  {
+    title: 'Stylo 160 Glam Red CBS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 31380000,
+      downPayment: 0,
+      listingPrice: 31911000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Stylo 160'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.25,
+        total: 10
+      }
+    }
+  },
+  {
+    title: 'Stylo 160 Glam Black CBS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 31380000,
+      downPayment: 0,
+      listingPrice: 31911000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Stylo 160'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.25,
+        total: 10
+      }
+    }
+  },
+  {
+    title: 'Stylo 160 Glam Beige CBS',
+    type: MotorcycleType.Scooter,
+    brand: MotorcycleBrands.Honda,
+    transmission: TransmissionType.Automatic,
+    fuelType: FuelType.Petrol,
+    pricing: {
+      otrPrice: 31380000,
+      downPayment: 0,
+      listingPrice: 31911000,
+      standardPrice: 0,
+      discountPrice: 0
+    },
+    variants: {
+      category: 'Kategori',
+      sub_category: 'Stylo 160'
+    },
+    more_information: {
+      images: [
+        imageProviderBaseURL + '/cari-otomotif-jepara/motor-no-preview-available.webp'
+      ],
+      reviews: {
+        rating: 4.25,
+        total: 10
+      }
+    }
   }
 
   // {
