@@ -1,4 +1,18 @@
-import { boolean, pgTable, text, timestamp } from 'drizzle-orm/pg-core'
+import { relations } from 'drizzle-orm'
+import {
+  boolean,
+  index,
+  integer,
+  numeric,
+  pgEnum,
+  pgTable,
+  serial,
+  text,
+  timestamp,
+  uuid
+} from 'drizzle-orm/pg-core'
+
+// -------------------- USERS --------------------
 
 export const user = pgTable('user', {
   id: text('id').primaryKey(),
@@ -55,3 +69,115 @@ export const verification = pgTable('verification', {
   createdAt: timestamp('created_at').$defaultFn(() => /* @__PURE__ */ new Date()),
   updatedAt: timestamp('updated_at').$defaultFn(() => /* @__PURE__ */ new Date())
 })
+
+// -------------------- PRODUCTS --------------------
+
+export const productTypeEnum = pgEnum('product_type', [
+  'motorcycle',
+  'sparepart',
+  'car'
+])
+
+export const conditionEnum = pgEnum('condition', ['new', 'used'])
+
+export const brands = pgTable('brands', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull().unique(),
+  type: productTypeEnum('type').notNull(),
+  url: text('url').notNull(),
+  imageUrl: text('image_url').notNull()
+})
+
+export const categories = pgTable('categories', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull(),
+  parentId: integer('parent_id')
+})
+
+export const products = pgTable(
+  'products',
+  {
+    id: uuid('id').defaultRandom().primaryKey(),
+    brandId: integer('brand_id').references(() => brands.id),
+    categoryId: integer('category_id').references(() => categories.id),
+    type: productTypeEnum('type').notNull(),
+    title: text('title').notNull(),
+    description: text('description'),
+    price: numeric('price', { precision: 12, scale: 2 }).notNull(),
+    condition: conditionEnum('condition').default('used'),
+    createdAt: timestamp('created_at').defaultNow(),
+    updatedAt: timestamp('updated_at').defaultNow()
+  },
+  table => ({
+    categoryIdx: index('products_category_idx').on(table.categoryId),
+    brandIdx: index('products_brand_idx').on(table.brandId)
+  })
+)
+
+export const motorcycleDetails = pgTable('motorcycle_details', {
+  productId: uuid('product_id')
+    .primaryKey()
+    .references(() => products.id, { onDelete: 'cascade' }),
+  year: integer('year'),
+  mileage: integer('mileage')
+})
+
+export const sparepartDetails = pgTable('sparepart_details', {
+  productId: uuid('product_id')
+    .primaryKey()
+    .references(() => products.id, { onDelete: 'cascade' }),
+  stockQuantity: integer('stock_quantity').default(1) // hidden from frontend
+})
+
+export const productImages = pgTable('product_images', {
+  id: serial('id').primaryKey(),
+  productId: uuid('product_id').references(() => products.id, { onDelete: 'cascade' }),
+  imageUrl: text('image_url').notNull(),
+  sortOrder: integer('sort_order').default(0)
+})
+
+export const reviews = pgTable('reviews', {
+  id: serial('id').primaryKey(),
+  productId: uuid('product_id').references(() => products.id, { onDelete: 'cascade' }),
+  userId: text('user_id')
+    .notNull()
+    .references(() => user.id, { onDelete: 'cascade' }),
+  rating: integer('rating').notNull(), // 1-5
+  comment: text('comment'),
+  createdAt: timestamp('created_at').defaultNow()
+})
+
+export const categoryRelations = relations(categories, ({ one, many }) => ({
+  parent: one(categories, {
+    fields: [categories.parentId],
+    references: [categories.id]
+  }),
+  children: many(categories)
+}))
+
+export const productRelations = relations(products, ({ one, many }) => ({
+  brand: one(brands, {
+    fields: [products.brandId],
+    references: [brands.id]
+  }),
+  category: one(categories, {
+    fields: [products.categoryId],
+    references: [categories.id]
+  }),
+  images: many(productImages),
+  reviews: many(reviews)
+}))
+
+export const motorcycleRelations = relations(motorcycleDetails, ({ one }) => ({
+  product: one(products, {
+    fields: [motorcycleDetails.productId],
+    references: [products.id]
+  })
+}))
+
+export const sparepartRelations = relations(sparepartDetails, ({ one }) => ({
+  product: one(products, {
+    fields: [sparepartDetails.productId],
+    references: [products.id]
+  })
+}))
