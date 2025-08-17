@@ -1,3 +1,5 @@
+import { PAGE_ROUTES } from '@/common/constants'
+
 export const navigationItems = [
   // {
   //   title: 'Layanan',
@@ -121,8 +123,8 @@ export const navigationItems = [
 ]
 
 export const simpleItems = [
-  { title: 'Beranda', href: '/' },
+  { title: 'Beranda', href: PAGE_ROUTES.marketing.home.path },
   // { title: 'Tentang Kami', href: '/about' },
-  { title: 'Brand/Merek', href: '/brands' },
-  { title: 'Semua Produk', href: '/products' }
+  { title: 'Brand/Merek', href: PAGE_ROUTES.marketing.brands.path },
+  { title: 'Semua Produk', href: PAGE_ROUTES.marketing.products.path }
 ]

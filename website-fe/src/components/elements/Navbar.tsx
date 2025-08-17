@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { PAGE_ROUTES } from '@/common/constants'
 import { simpleItems } from '@/common/contents'
 import { Menu, Phone } from 'lucide-react'
 import { memo, useState } from 'react'
@@ -61,7 +62,10 @@ const PureNavbar = () => {
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
-              <Link href="/" className="flex items-center space-x-2">
+              <Link
+                href={PAGE_ROUTES.marketing.home.path}
+                className="flex items-center space-x-2"
+              >
                 <div className="relative flex h-8 w-8 items-center justify-center rounded bg-blue-600">
                   <Image
                     src="/logo.png"

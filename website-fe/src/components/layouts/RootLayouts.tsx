@@ -1,7 +1,9 @@
 'use client'
 
 import dynamic from 'next/dynamic'
+import { usePathname } from 'next/navigation'
 
+import { NO_LANDING_NAVBAR } from '@/common/constants'
 import { useHasMounted } from '@/hooks'
 import 'aos/dist/aos.css'
 import { ReactNode, Suspense, useEffect } from 'react'
@@ -21,6 +23,7 @@ const RootLayouts = ({
   children: ReactNode
 }>) => {
   const mounted = useHasMounted()
+  const pathname = usePathname()
 
   useEffect(() => {
     import('aos').then(AOS => {
@@ -32,33 +35,37 @@ const RootLayouts = ({
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
+      {NO_LANDING_NAVBAR.includes(pathname as string) ? null : <Navbar />}
       <main className="">
         <Suspense fallback={<Loading />}>
-          <FloatingWhatsApp
-            phoneNumber="628122851744"
-            accountName="Pak Probo (Admin 1)"
-            avatar="/admin_1.jpg"
-            initialMessageByServer="Halo, apa ada yang bisa saya bantu buat cari otomotif keinginan anda? 🙏"
-            initialMessageByClient="Halo Pak Praba, saya ingin cari-cari otomotif di jepara nih"
-            statusMessage="Online"
-            startChatText="Hubungi Sekarang"
-            tooltipText="Mau cari otomotif apa hari ini?"
-            position="bottom-right"
-            messageDelay={2}
-          />
-          <BackToTopButton
-            threshold={300}
-            scrollDuration={800}
-            position="bottom-right"
-            size="md"
-            backgroundColor="#3B82F6"
-            showProgress={true}
-          />
+          {NO_LANDING_NAVBAR.includes(pathname as string) ? null : (
+            <>
+              <FloatingWhatsApp
+                phoneNumber="628122851744"
+                accountName="Pak Probo (Admin 1)"
+                avatar="/admin_1.jpg"
+                initialMessageByServer="Halo, apa ada yang bisa saya bantu buat cari otomotif keinginan anda? 🙏"
+                initialMessageByClient="Halo Pak Praba, saya ingin cari-cari otomotif di jepara nih"
+                statusMessage="Online"
+                startChatText="Hubungi Sekarang"
+                tooltipText="Mau cari otomotif apa hari ini?"
+                position="bottom-right"
+                messageDelay={2}
+              />
+              <BackToTopButton
+                threshold={300}
+                scrollDuration={800}
+                position="bottom-right"
+                size="md"
+                backgroundColor="#3B82F6"
+                showProgress={true}
+              />
+            </>
+          )}
           {children}
-          <Footer />
         </Suspense>
       </main>
+      {NO_LANDING_NAVBAR.includes(pathname as string) ? null : <Footer />}
     </div>
   )
 }
