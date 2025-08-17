@@ -12,5 +12,11 @@ export const auth = betterAuth({
     enabled: true
   },
   socialProviders: {},
+  session: {
+    cookieCache: {
+      enabled: true,
+      maxAge: 5 * 60 // Cache duration in seconds
+    }
+  },
   plugins: [openAPI()]
 })
