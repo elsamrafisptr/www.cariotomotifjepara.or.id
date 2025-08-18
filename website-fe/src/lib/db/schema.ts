@@ -31,9 +31,7 @@ export const user = pgTable(
       .$defaultFn(() => /* @__PURE__ */ new Date())
       .notNull()
   },
-  table => ({
-    emailIdx: index('users_email_idx').on(table.email)
-  })
+  table => [index('users_email_idx').on(table.email)]
 )
 
 export const session = pgTable(
@@ -50,10 +48,10 @@ export const session = pgTable(
       .notNull()
       .references(() => user.id, { onDelete: 'cascade' })
   },
-  table => ({
-    sessionsUserIdIdx: index('sessions_users_id_idx').on(table.userId),
-    sessionsTokenIdx: index('sessions_token_idx').on(table.token)
-  })
+  table => [
+    index('sessions_users_id_idx').on(table.userId),
+    index('sessions_token_idx').on(table.token)
+  ]
 )
 
 export const account = pgTable(
@@ -75,9 +73,7 @@ export const account = pgTable(
     createdAt: timestamp('created_at').notNull(),
     updatedAt: timestamp('updated_at').notNull()
   },
-  table => ({
-    accountsUserIdIdx: index('accounts_user_id_idx').on(table.userId)
-  })
+  table => [index('accounts_user_id_idx').on(table.userId)]
 )
 
 export const verification = pgTable(
@@ -90,11 +86,7 @@ export const verification = pgTable(
     createdAt: timestamp('created_at').$defaultFn(() => /* @__PURE__ */ new Date()),
     updatedAt: timestamp('updated_at').$defaultFn(() => /* @__PURE__ */ new Date())
   },
-  table => ({
-    verificationsIdentifierIdx: index('verifications_identifier_idx').on(
-      table.identifier
-    )
-  })
+  table => [index('verifications_identifier_idx').on(table.identifier)]
 )
 
 // -------------------- PRODUCTS --------------------
@@ -106,6 +98,15 @@ export const productTypeEnum = pgEnum('product_type', [
 ])
 
 export const conditionEnum = pgEnum('condition', ['new', 'used'])
+
+export const fuelTypeEnum = pgEnum('fuel_type', [
+  'Petrol',
+  'Electric (EV)',
+  'Hybrid (Electric & Petrol)',
+  'Hydrogen'
+])
+
+export const TransmissionTypeEnum = pgEnum('transmission_type', ['Automatic', 'Manual'])
 
 export const brands = pgTable('brands', {
   id: serial('id').primaryKey(),
@@ -125,20 +126,21 @@ export const products = pgTable(
   'products',
   {
     id: uuid('id').defaultRandom().primaryKey(),
-    brandId: integer('brand_id').references(() => brands.id),
-    categoryId: integer('category_id').references(() => categories.id),
     type: productTypeEnum('type').notNull(),
+    brandId: integer('brand_id').references(() => brands.id),
+    transmission: TransmissionTypeEnum('transmission_type').notNull(),
+    fuelType: fuelTypeEnum('fuel_type').notNull(),
+    categoryId: integer('category_id').references(() => categories.id),
     title: text('title').notNull(),
     description: text('description'),
-    price: numeric('price', { precision: 12, scale: 2 }).notNull(),
     condition: conditionEnum('condition').default('used'),
     createdAt: timestamp('created_at').defaultNow(),
     updatedAt: timestamp('updated_at').defaultNow()
   },
-  table => ({
-    categoryIdx: index('products_category_idx').on(table.categoryId),
-    brandIdx: index('products_brand_idx').on(table.brandId)
-  })
+  table => [
+    index('products_category_idx').on(table.categoryId),
+    index('products_brand_idx').on(table.brandId)
+  ]
 )
 
 export const motorcycleDetails = pgTable('motorcycle_details', {
@@ -146,21 +148,29 @@ export const motorcycleDetails = pgTable('motorcycle_details', {
     .primaryKey()
     .references(() => products.id, { onDelete: 'cascade' }),
   year: integer('year'),
-  mileage: integer('mileage')
+  htmlDescription: text('html_description')
 })
 
 export const sparepartDetails = pgTable('sparepart_details', {
   productId: uuid('product_id')
     .primaryKey()
     .references(() => products.id, { onDelete: 'cascade' }),
-  stockQuantity: integer('stock_quantity').default(1) // hidden from frontend
+  stockQuantity: integer('stock_quantity').default(1),
+  htmlDescription: text('html_description')
 })
 
 export const productImages = pgTable('product_images', {
   id: serial('id').primaryKey(),
   productId: uuid('product_id').references(() => products.id, { onDelete: 'cascade' }),
-  imageUrl: text('image_url').notNull(),
-  sortOrder: integer('sort_order').default(0)
+  imageUrl: text('image_url').notNull()
+})
+
+export const productPrices = pgTable('product_prices', {
+  id: serial('id').primaryKey(),
+  productId: uuid('product_id').references(() => products.id),
+  listPrice: numeric('list_price', { precision: 12, scale: 2 }).notNull(),
+  normalPrice: numeric('normal_price', { precision: 12, scale: 2 }).notNull(),
+  discountPrice: text('discount_price').notNull()
 })
 
 export const reviews = pgTable('reviews', {
@@ -169,7 +179,7 @@ export const reviews = pgTable('reviews', {
   userId: text('user_id')
     .notNull()
     .references(() => user.id, { onDelete: 'cascade' }),
-  rating: integer('rating').notNull(), // 1-5
+  rating: integer('rating').notNull(),
   comment: text('comment'),
   createdAt: timestamp('created_at').defaultNow()
 })
