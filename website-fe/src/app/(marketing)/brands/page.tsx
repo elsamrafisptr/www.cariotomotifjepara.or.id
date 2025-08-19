@@ -25,7 +25,7 @@ const BrandsPage = async () => {
           {brands.result.map((item: Partial<Brand>, index: number) => {
             return (
               <Link
-                href={item.url!}
+                href={'/brands' + item.url}
                 key={index}
                 className="aspect-video w-full rounded border hover:cursor-pointer hover:border-gray-500 md:w-80 md:rounded-lg"
               >
