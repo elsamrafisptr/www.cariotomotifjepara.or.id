@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation'
 
 import { betterAuth } from 'better-auth'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
+import { nextCookies } from 'better-auth/next-js'
 import { openAPI } from 'better-auth/plugins'
 
 import { db } from './db'
@@ -14,7 +15,10 @@ export const auth = betterAuth({
     schema
   }),
   emailAndPassword: {
-    enabled: true
+    enabled: true,
+    autoSignIn: true,
+    minPasswordLength: 8,
+    maxPasswordLength: 32
   },
   socialProviders: {},
   session: {
@@ -23,7 +27,7 @@ export const auth = betterAuth({
       maxAge: 5 * 60 // Cache duration in seconds
     }
   },
-  plugins: [openAPI()]
+  plugins: [openAPI(), nextCookies()]
 })
 
 export async function getCurrentUser() {
