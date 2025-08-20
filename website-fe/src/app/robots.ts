@@ -1,9 +1,8 @@
 import { MetadataRoute } from 'next'
 
-import { getBaseUrl } from '@/lib/utils'
+import { BASE_URL } from '@/common/constants'
 
 export default function robots(): MetadataRoute.Robots {
-  const BASE_URL = getBaseUrl()
   const isProduction = process.env.NODE_ENV === 'production'
 
   if (!isProduction) {
@@ -28,6 +27,7 @@ export default function robots(): MetadataRoute.Robots {
           '/admin/*',
           '/auth/',
           '/upload/',
+          '/private/',
           '/dashboard/',
           '/wp-admin/',
           '/_next/',
@@ -44,6 +44,16 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: 'Googlebot',
         allow: '/',
         disallow: ['/api/', '/admin/', '/_next/', '/private/']
+      },
+
+      {
+        userAgent: 'Googlebot-Image',
+        allow: ['/images/', '/uploads/']
+      },
+
+      {
+        userAgent: 'Googlebot-News',
+        allow: '/'
       },
 
       {

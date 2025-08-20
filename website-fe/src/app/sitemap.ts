@@ -1,10 +1,8 @@
 import type { MetadataRoute } from 'next'
 
-import { getBaseUrl } from '@/lib/utils'
+import { BASE_URL } from '@/common/constants'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const BASE_URL = getBaseUrl()
-
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: `${BASE_URL}`,
@@ -15,8 +13,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: `${BASE_URL}/about`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9
+      changeFrequency: 'yearly',
+      priority: 0.6
     },
     {
       url: `${BASE_URL}/products`,
@@ -28,13 +26,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${BASE_URL}/services`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.9
+      priority: 0.7
     },
     {
       url: `${BASE_URL}/brands`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.9
+      priority: 0.8
     },
     {
       url: `${BASE_URL}/blog`,
@@ -46,7 +44,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${BASE_URL}/contacts`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.7
+      priority: 0.5
     },
     {
       url: `${BASE_URL}/privacy-policy`,

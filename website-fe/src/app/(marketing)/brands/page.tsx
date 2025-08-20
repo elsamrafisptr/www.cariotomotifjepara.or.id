@@ -1,8 +1,46 @@
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { BASE_URL } from '@/common/constants'
 import { Brand } from '@/common/types'
 import { brandService } from '@/services'
+
+export const metadata: Metadata = {
+  title: 'Brand/Merek',
+  description:
+    'Pelajari lebih lanjut tentang brand/merek dari Cari Otomotif, platform terpercaya untuk jual beli motor, mobil, dan sparepart baru & bekas di Jepara.',
+  keywords: [
+    'brand Otomotif Jepara',
+    'merek Otomotif Jepara',
+    'dealer motor Jepara',
+    'dealer mobil Jepara',
+    'sparepart otomotif Jepara'
+  ],
+  openGraph: {
+    url: `${BASE_URL}/brands`,
+    type: 'website',
+    title: 'Brand/Merek',
+    description:
+      'Cari Otomotif Jepara adalah platform terpercaya untuk jual beli otomotif di Jepara.',
+    images: [
+      {
+        url: `${BASE_URL}/images/about.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Brand/Merek Cari Otomotif Jepara'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Brand/Merek',
+    description: 'Platform terpercaya untuk jual beli otomotif di Jepara.'
+  },
+  alternates: {
+    canonical: `${BASE_URL}/brands`
+  }
+}
 
 const BrandsPage = async () => {
   const brands = await brandService.listBrands()

@@ -1,3 +1,7 @@
 import { NO_LANDING_NAVBAR, PAGE_ROUTES } from './page-routes'
 
-export { PAGE_ROUTES, NO_LANDING_NAVBAR }
+import { getBaseUrl } from '@/lib/utils'
+
+const BASE_URL = getBaseUrl()
+
+export { PAGE_ROUTES, NO_LANDING_NAVBAR, BASE_URL }
