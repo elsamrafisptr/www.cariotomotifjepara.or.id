@@ -15,6 +15,52 @@ export const PAGE_ROUTES = {
       root: {
         path: '/dashboard',
         label: 'Dashboard'
+      },
+      'data-management': {
+        root: {
+          path: '/dashboard/data-management',
+          label: 'Data Management'
+        },
+        products: {
+          path: '/dashboard/data-management/products',
+          label: 'Products Data Management'
+        },
+        brands: {
+          path: '/dashboard/data-management/brands',
+          label: 'Brands Data Management'
+        },
+        categories: {
+          path: '/dashboard/data-management/categories',
+          label: 'Categories Data Management'
+        }
+      },
+      'content-management': {
+        root: {
+          path: '/dashboard/content-management',
+          label: 'Content Management'
+        },
+        blog: {
+          path: '/dashboard/content-management/blog',
+          label: 'Blog Content Management'
+        }
+      },
+      settings: {
+        root: {
+          path: '/dashboard/settings',
+          label: 'Settings'
+        },
+        general: {
+          path: '/dashboard/settings/general',
+          label: 'General Settings'
+        },
+        personal: {
+          path: '/dashboard/settings/personal',
+          label: 'Personal Settings'
+        },
+        changelog: {
+          path: '/dashboard/settings/changelog',
+          label: 'Credit & Changelog Settings'
+        }
       }
     }
   },
@@ -42,4 +88,9 @@ export const PUBLIC_PATHS: string[] = [
   PAGE_ROUTES.auth.register.path
 ]
 
-export const PROTECTED_PATHS: string[] = [PAGE_ROUTES.main.dashboard.root.path]
+export const PROTECTED_PATHS: string[] = [
+  PAGE_ROUTES.main.dashboard.root.path,
+  PAGE_ROUTES.main.dashboard['data-management'].root.path,
+  PAGE_ROUTES.main.dashboard['content-management'].root.path,
+  PAGE_ROUTES.main.dashboard.settings.root.path
+]

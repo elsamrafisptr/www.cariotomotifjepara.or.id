@@ -1,5 +1,6 @@
 'use client'
 
+import { PAGE_ROUTES } from '@/common/constants'
 import { User } from '@/common/types'
 import { BookOpen, Bot, Settings2, SquareTerminal } from 'lucide-react'
 import { ComponentProps } from 'react'
@@ -23,58 +24,58 @@ type AppSidebarProps = ComponentProps<typeof Sidebar> & {
 const data = {
   navMain: [
     {
-      title: 'Dashboard',
-      url: '/',
+      title: PAGE_ROUTES.main.dashboard.root.label,
+      url: PAGE_ROUTES.main.dashboard.root.path,
       icon: SquareTerminal,
       isActive: true,
       items: []
     },
     {
       title: 'Data Management',
-      url: '#',
+      url: PAGE_ROUTES.main.dashboard['data-management'].root.path,
       icon: Bot,
       items: [
         {
           title: 'Products',
-          url: '#'
+          url: PAGE_ROUTES.main.dashboard['data-management'].products.path
         },
         {
           title: 'Brands',
-          url: '#'
+          url: PAGE_ROUTES.main.dashboard['data-management'].brands.path
         },
         {
           title: 'Categories',
-          url: '#'
+          url: PAGE_ROUTES.main.dashboard['data-management'].categories.path
         }
       ]
     },
     {
       title: 'Content Management',
-      url: '#',
+      url: PAGE_ROUTES.main.dashboard['content-management'].root.path,
       icon: BookOpen,
       items: [
         {
           title: 'Blog Content',
-          url: '#'
+          url: PAGE_ROUTES.main.dashboard['content-management'].blog.path
         }
       ]
     },
     {
       title: 'Settings',
-      url: '#',
+      url: PAGE_ROUTES.main.dashboard.settings.root.path,
       icon: Settings2,
       items: [
         {
           title: 'General',
-          url: '#'
+          url: PAGE_ROUTES.main.dashboard.settings.general.path
         },
         {
           title: 'Personal',
-          url: '#'
+          url: PAGE_ROUTES.main.dashboard.settings.personal.path
         },
         {
           title: 'Credit & Changelog',
-          url: '#'
+          url: PAGE_ROUTES.main.dashboard.settings.changelog.path
         }
       ]
     }

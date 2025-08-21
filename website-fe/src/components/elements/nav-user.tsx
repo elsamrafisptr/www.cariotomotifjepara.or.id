@@ -3,8 +3,9 @@
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
+import { PAGE_ROUTES } from '@/common/constants'
 import { User } from '@/common/types'
-import { Bell, ChevronsUpDown, CreditCard, LogOut, Sparkles } from 'lucide-react'
+import { BellIcon, ChevronsUpDownIcon, LogOutIcon, Settings2Icon } from 'lucide-react'
 
 import { authClient } from '@/lib/auth-client'
 
@@ -54,7 +55,7 @@ export function NavUser({ user }: { user: Partial<User> }) {
                 <span className="truncate font-medium">{user.name}</span>
                 <span className="truncate text-xs">{user.email}</span>
               </div>
-              <ChevronsUpDown className="ml-auto size-4" />
+              <ChevronsUpDownIcon className="ml-auto size-4" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent
@@ -81,30 +82,21 @@ export function NavUser({ user }: { user: Partial<User> }) {
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem asChild>
-                <Link href="/pricing">
-                  <Sparkles />
-                  Upgrade to Pro
-                </Link>
-              </DropdownMenuItem>
-            </DropdownMenuGroup>
-            <DropdownMenuSeparator />
-            <DropdownMenuGroup>
-              <DropdownMenuItem asChild>
-                <Link href="/dashboard/settings/billing">
-                  <CreditCard />
-                  Billing
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/dashboard/settings/notification">
-                  <Bell />
+                <Link href={PAGE_ROUTES.main.dashboard.root.path}>
+                  <BellIcon />
                   Notifications
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href={PAGE_ROUTES.main.dashboard.settings.root.path}>
+                  <Settings2Icon />
+                  Settings
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={handleLogout} variant="destructive">
-              <LogOut />
+              <LogOutIcon />
               Log out
             </DropdownMenuItem>
           </DropdownMenuContent>
