@@ -1,17 +1,21 @@
-import { type NextRequest, NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 import { getSessionCookie } from 'better-auth/cookies'
 
+import { PROTECTED_PATHS, PUBLIC_PATHS } from './common/constants'
+
 export async function middleware(request: NextRequest) {
   const sessionCookie = getSessionCookie(request)
-  if (!sessionCookie) {
-    if (
-      request.nextUrl.pathname === '/login' ||
-      request.nextUrl.pathname === '/register'
-    ) {
-      return NextResponse.next()
-    }
-    return NextResponse.redirect(new URL('/', request.url))
+  const pathname = request.nextUrl.pathname.replace(/\/+$/, '') || '/'
+
+  // For unauthenticated -> block the protected routes
+  if (!sessionCookie && PROTECTED_PATHS.includes(pathname)) {
+    return NextResponse.redirect(new URL('/login', request.url))
+  }
+
+  // For authenticated -> keep away from auth pages (login/register)
+  if (sessionCookie && PUBLIC_PATHS.includes(pathname) && pathname !== '/') {
+    return NextResponse.redirect(new URL('/dashboard', request.url))
   }
 
   return NextResponse.next()

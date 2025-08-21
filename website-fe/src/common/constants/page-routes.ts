@@ -35,3 +35,11 @@ export const NO_LANDING_NAVBAR: string[] = [
   PAGE_ROUTES.auth.register.path,
   PAGE_ROUTES.main.dashboard.root.path
 ]
+
+export const PUBLIC_PATHS: string[] = [
+  PAGE_ROUTES.marketing.home.path,
+  PAGE_ROUTES.auth.login.path,
+  PAGE_ROUTES.auth.register.path
+]
+
+export const PROTECTED_PATHS: string[] = [PAGE_ROUTES.main.dashboard.root.path]
