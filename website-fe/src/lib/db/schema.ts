@@ -128,8 +128,6 @@ export const products = pgTable(
     id: uuid('id').defaultRandom().primaryKey(),
     type: productTypeEnum('type').notNull(),
     brandId: integer('brand_id').references(() => brands.id),
-    transmission: TransmissionTypeEnum('transmission_type').notNull(),
-    fuelType: fuelTypeEnum('fuel_type').notNull(),
     categoryId: integer('category_id').references(() => categories.id),
     title: text('title').notNull(),
     description: text('description'),
@@ -148,6 +146,8 @@ export const motorcycleDetails = pgTable('motorcycle_details', {
     .primaryKey()
     .references(() => products.id, { onDelete: 'cascade' }),
   year: integer('year'),
+  transmission: TransmissionTypeEnum('transmission_type').notNull(),
+  fuelType: fuelTypeEnum('fuel_type').notNull(),
   htmlDescription: text('html_description')
 })
 
