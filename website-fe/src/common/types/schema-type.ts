@@ -16,3 +16,13 @@ export const tableSchema = z.object({
 })
 
 export type TableSchema = z.infer<typeof tableSchema>
+
+export const brandSchema = z.object({
+  id: z.number(),
+  name: z.string(),
+  type: z.enum(['motorcycle', 'sparepart', 'car']),
+  url: z.string(),
+  imageUrl: z.string()
+})
+
+export type BrandSchema = z.infer<typeof brandSchema>

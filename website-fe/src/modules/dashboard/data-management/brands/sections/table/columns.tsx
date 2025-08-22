@@ -1,16 +1,19 @@
 'use client'
 
-import { TABLE_LABELS, TABLE_PRIORITIES, TABLE_STATUSES } from '@/common/constants'
-import { TableSchema } from '@/common/types'
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { BrandSchema } from '@/common/types'
 import { ColumnDef } from '@tanstack/react-table'
 
 import { DataTableColumnHeader } from './column-header'
 import { DataTableRowActions } from './row-actions'
 
 import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 
-export const columns: ColumnDef<TableSchema>[] = [
+export const columns: ColumnDef<BrandSchema>[] = [
   {
     id: 'select',
     header: ({ table }) => (
@@ -37,71 +40,82 @@ export const columns: ColumnDef<TableSchema>[] = [
   },
   {
     accessorKey: 'id',
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Task" />,
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue('id')}</div>,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Number" />,
+    cell: ({ row }) => <div className="w-fit">{row.getValue('id')}</div>,
     enableSorting: false,
     enableHiding: false
   },
   {
-    accessorKey: 'title',
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Title" />,
+    accessorKey: 'imageUrl',
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Brand's Image" />
+    ),
     cell: ({ row }) => {
-      const label = TABLE_LABELS.find(label => label.value === row.original.label)
+      const imageUrl = row.getValue<string>('imageUrl')
+
+      if (!imageUrl) {
+        return (
+          <div className="flex h-10 w-16 items-center justify-center rounded bg-gray-100 text-xs text-gray-500">
+            No Image
+          </div>
+        )
+      }
 
       return (
-        <div className="flex gap-2">
-          {label && <Badge variant="outline">{label.label}</Badge>}
-          <span className="max-w-[500px] truncate font-medium">
-            {row.getValue('title')}
-          </span>
+        <div className="flex h-10 w-16 items-center">
+          <Image
+            src={imageUrl}
+            alt={row.getValue('name') || 'Brand'}
+            width={64}
+            height={64}
+            className="aspect-video rounded border object-cover"
+          />
         </div>
       )
     }
   },
   {
-    accessorKey: 'status',
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Status" />,
+    accessorKey: 'name',
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Brand's Name" />
+    ),
     cell: ({ row }) => {
-      const status = TABLE_STATUSES.find(
-        status => status.value === row.getValue('status')
-      )
-
-      if (!status) {
-        return null
-      }
-
+      return <div className="flex gap-2">{row.getValue('name')}</div>
+    }
+  },
+  {
+    accessorKey: 'type',
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Brand's Type" />
+    ),
+    cell: ({ row }) => {
       return (
         <div className="flex w-[100px] items-center gap-2">
-          {status.icon && <status.icon className="text-muted-foreground size-4" />}
-          <span>{status.label}</span>
+          <Badge variant="outline" className="rounded-full capitalize">
+            {row.getValue('type')}
+          </Badge>
         </div>
       )
-    },
-    filterFn: (row, id, value) => {
-      return value.includes(row.getValue(id))
     }
   },
   {
-    accessorKey: 'priority',
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Priority" />,
+    accessorKey: 'url',
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Brand's Site Preview" />
+    ),
     cell: ({ row }) => {
-      const priority = TABLE_PRIORITIES.find(
-        priority => priority.value === row.getValue('priority')
-      )
-
-      if (!priority) {
-        return null
-      }
-
       return (
-        <div className="flex items-center gap-2">
-          {priority.icon && <priority.icon className="text-muted-foreground size-4" />}
-          <span>{priority.label}</span>
+        <div className="flex w-[100px] items-start gap-2">
+          <Button asChild variant="link" size="sm" className="px-0">
+            <Link
+              className="text-left text-sm font-normal text-sky-500 hover:text-sky-600"
+              href={'/brands' + row.getValue('url')}
+            >
+              Go to {row.getValue('name')} Page
+            </Link>
+          </Button>
         </div>
       )
-    },
-    filterFn: (row, id, value) => {
-      return value.includes(row.getValue(id))
     }
   },
   {
