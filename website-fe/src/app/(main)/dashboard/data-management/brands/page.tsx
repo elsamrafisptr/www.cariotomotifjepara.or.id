@@ -1,5 +1,7 @@
+import BrandsManagement from '@/modules/dashboard/data-management/brands'
+
 const BrandsDataManagement = () => {
-  return <div>BrandsDataManagement</div>
+  return <BrandsManagement />
 }
 
 export default BrandsDataManagement

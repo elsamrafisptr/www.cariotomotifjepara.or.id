@@ -1,5 +1,7 @@
+import CategoriesManagement from '@/modules/dashboard/data-management/categories'
+
 const CategoriesDataManagement = () => {
-  return <div>CategoriesDataManagement</div>
+  return <CategoriesManagement />
 }
 
 export default CategoriesDataManagement

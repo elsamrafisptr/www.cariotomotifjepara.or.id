@@ -1,4 +1,5 @@
 import type { RouteItem, RouteTree } from './route-type'
-import type { Brand, User } from './schema-type'
+import { type Brand, TableSchema, type User, tableSchema } from './schema-type'
 
-export { RouteItem, RouteTree, Brand, User }
+export type { RouteItem, RouteTree, TableSchema, Brand, User }
+export { tableSchema }

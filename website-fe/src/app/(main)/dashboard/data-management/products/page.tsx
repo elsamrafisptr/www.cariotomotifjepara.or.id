@@ -1,5 +1,7 @@
+import ProductsManagement from '@/modules/dashboard/data-management/products'
+
 const ProductsDataManagement = () => {
-  return <div>ProductsDataManagement</div>
+  return <ProductsManagement />
 }
 
 export default ProductsDataManagement
