@@ -83,7 +83,9 @@ export const NO_LANDING_NAVBAR: string[] = [
   PAGE_ROUTES.main.dashboard['data-management'].root.path,
   PAGE_ROUTES.main.dashboard['data-management'].products.path,
   PAGE_ROUTES.main.dashboard['data-management'].brands.path,
-  PAGE_ROUTES.main.dashboard['data-management'].categories.path
+  PAGE_ROUTES.main.dashboard['data-management'].categories.path,
+  PAGE_ROUTES.main.dashboard['content-management'].root.path,
+  PAGE_ROUTES.main.dashboard['content-management'].blog.path
 ]
 
 export const PUBLIC_PATHS: string[] = [
