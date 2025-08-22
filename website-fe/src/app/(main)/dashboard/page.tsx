@@ -1,5 +1,7 @@
+import DashboardRoot from '@/modules/dashboard/root'
+
 const DashboardRootPage = () => {
-  return <div>DashboardRootPage</div>
+  return <DashboardRoot />
 }
 
 export default DashboardRootPage

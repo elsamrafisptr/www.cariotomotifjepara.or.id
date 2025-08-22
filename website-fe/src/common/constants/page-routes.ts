@@ -79,7 +79,17 @@ export const PAGE_ROUTES = {
 export const NO_LANDING_NAVBAR: string[] = [
   PAGE_ROUTES.auth.login.path,
   PAGE_ROUTES.auth.register.path,
-  PAGE_ROUTES.main.dashboard.root.path
+  PAGE_ROUTES.main.dashboard.root.path,
+  PAGE_ROUTES.main.dashboard['data-management'].root.path,
+  PAGE_ROUTES.main.dashboard['data-management'].products.path,
+  PAGE_ROUTES.main.dashboard['data-management'].brands.path,
+  PAGE_ROUTES.main.dashboard['data-management'].categories.path,
+  PAGE_ROUTES.main.dashboard['content-management'].root.path,
+  PAGE_ROUTES.main.dashboard['content-management'].blog.path,
+  PAGE_ROUTES.main.dashboard.settings.root.path,
+  PAGE_ROUTES.main.dashboard.settings.general.path,
+  PAGE_ROUTES.main.dashboard.settings.personal.path,
+  PAGE_ROUTES.main.dashboard.settings.changelog.path
 ]
 
 export const PUBLIC_PATHS: string[] = [
