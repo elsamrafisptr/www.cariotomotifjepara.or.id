@@ -106,20 +106,30 @@ export const fuelTypeEnum = pgEnum('fuel_type', [
   'Hydrogen'
 ])
 
-export const TransmissionTypeEnum = pgEnum('transmission_type', ['Automatic', 'Manual'])
+export const transmissionTypeEnum = pgEnum('transmission_type', ['Automatic', 'Manual'])
+
+export const statusTypeEnum = pgEnum('status_type', [
+  'moderation',
+  'active',
+  'dissaproved',
+  'hidden',
+  'disabled'
+])
 
 export const brands = pgTable('brands', {
   id: serial('id').primaryKey(),
   name: text('name').notNull().unique(),
   type: productTypeEnum('type').notNull(),
   url: text('url').notNull(),
-  imageUrl: text('image_url').notNull()
+  imageUrl: text('image_url').notNull(),
+  status: statusTypeEnum('status').default('moderation').notNull()
 })
 
 export const categories = pgTable('categories', {
   id: serial('id').primaryKey(),
   name: text('name').notNull(),
-  parentId: integer('parent_id')
+  parentId: integer('parent_id'),
+  status: statusTypeEnum('status').default('moderation').notNull()
 })
 
 export const products = pgTable(
@@ -132,6 +142,7 @@ export const products = pgTable(
     title: text('title').notNull(),
     description: text('description'),
     condition: conditionEnum('condition').default('used'),
+    status: statusTypeEnum('status').default('moderation').notNull(),
     createdAt: timestamp('created_at').defaultNow(),
     updatedAt: timestamp('updated_at').defaultNow()
   },
@@ -146,7 +157,7 @@ export const motorcycleDetails = pgTable('motorcycle_details', {
     .primaryKey()
     .references(() => products.id, { onDelete: 'cascade' }),
   year: integer('year'),
-  transmission: TransmissionTypeEnum('transmission_type').notNull(),
+  transmission: transmissionTypeEnum('transmission_type').notNull(),
   fuelType: fuelTypeEnum('fuel_type').notNull(),
   htmlDescription: text('html_description')
 })

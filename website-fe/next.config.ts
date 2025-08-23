@@ -2,8 +2,6 @@ import type { NextConfig } from 'next'
 
 import withBundleAnalyzer from '@next/bundle-analyzer'
 
-const isProd = process.env.NODE_ENV === 'production'
-
 const baseConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: true,
@@ -24,20 +22,15 @@ const baseConfig: NextConfig = {
     resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.json']
   },
   experimental: {
-    optimizeCss: false,
-    turbopackMinify: isProd,
-    turbopackTreeShaking: isProd,
-    optimisticClientCache: true,
-    optimizeServerReact: true,
     optimizePackageImports: [
       'motion',
       'lucide-react',
       'react',
       'react-dom',
       '@radix-ui/react-dialog',
-      '@radix-ui/react-slot'
-    ],
-    serverMinification: true
+      '@radix-ui/react-slot',
+      '@imagekit/next'
+    ]
   }
 }
 
