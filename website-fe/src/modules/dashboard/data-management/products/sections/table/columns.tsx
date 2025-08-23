@@ -1,16 +1,17 @@
 'use client'
 
-import { TABLE_LABELS, TABLE_PRIORITIES, TABLE_STATUSES } from '@/common/constants'
-import { TableSchema } from '@/common/types'
+import { ProductSchema } from '@/common/types'
 import { ColumnDef } from '@tanstack/react-table'
 
 import { DataTableColumnHeader } from './column-header'
 import { DataTableRowActions } from './row-actions'
 
+import { cn } from '@/lib/utils'
+
 import { Badge } from '@/components/ui/badge'
 import { Checkbox } from '@/components/ui/checkbox'
 
-export const columns: ColumnDef<TableSchema>[] = [
+export const columns: ColumnDef<ProductSchema>[] = [
   {
     id: 'select',
     header: ({ table }) => (
@@ -36,24 +37,68 @@ export const columns: ColumnDef<TableSchema>[] = [
     enableHiding: false
   },
   {
-    accessorKey: 'id',
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Task" />,
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue('id')}</div>,
-    enableSorting: false,
-    enableHiding: false
-  },
-  {
     accessorKey: 'title',
     header: ({ column }) => <DataTableColumnHeader column={column} title="Title" />,
     cell: ({ row }) => {
-      const label = TABLE_LABELS.find(label => label.value === row.original.label)
-
       return (
-        <div className="flex gap-2">
-          {label && <Badge variant="outline">{label.label}</Badge>}
-          <span className="max-w-[500px] truncate font-medium">
+        <div className="flex w-full gap-2">
+          <span className="w-full min-w-96 truncate font-medium">
             {row.getValue('title')}
           </span>
+        </div>
+      )
+    }
+  },
+  {
+    accessorKey: 'type',
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Product's Type" />
+    ),
+    cell: ({ row }) => {
+      return (
+        <div className="flex items-center gap-2">
+          <Badge variant="outline" className="rounded-full capitalize">
+            {row.getValue('type')}
+          </Badge>
+        </div>
+      )
+    }
+  },
+  {
+    accessorKey: 'condition',
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Condition" />,
+    cell: ({ row }) => {
+      return (
+        <div className="flex items-center gap-2">
+          <Badge variant="outline" className="rounded-full capitalize">
+            {row.getValue('condition')}
+          </Badge>
+        </div>
+      )
+    }
+  },
+  {
+    accessorKey: 'brandId',
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Brand" />,
+    cell: ({ row }) => {
+      return (
+        <div className="flex items-center gap-2">
+          <Badge variant="outline" className="rounded-full capitalize">
+            {row.getValue('condition')}
+          </Badge>
+        </div>
+      )
+    }
+  },
+  {
+    accessorKey: 'categoryId',
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Category" />,
+    cell: ({ row }) => {
+      return (
+        <div className="flex items-center gap-2">
+          <Badge variant="outline" className="rounded-full capitalize">
+            {row.getValue('condition')}
+          </Badge>
         </div>
       )
     }
@@ -62,46 +107,21 @@ export const columns: ColumnDef<TableSchema>[] = [
     accessorKey: 'status',
     header: ({ column }) => <DataTableColumnHeader column={column} title="Status" />,
     cell: ({ row }) => {
-      const status = TABLE_STATUSES.find(
-        status => status.value === row.getValue('status')
-      )
-
-      if (!status) {
-        return null
-      }
-
-      return (
-        <div className="flex w-[100px] items-center gap-2">
-          {status.icon && <status.icon className="text-muted-foreground size-4" />}
-          <span>{status.label}</span>
-        </div>
-      )
-    },
-    filterFn: (row, id, value) => {
-      return value.includes(row.getValue(id))
-    }
-  },
-  {
-    accessorKey: 'priority',
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Priority" />,
-    cell: ({ row }) => {
-      const priority = TABLE_PRIORITIES.find(
-        priority => priority.value === row.getValue('priority')
-      )
-
-      if (!priority) {
-        return null
-      }
-
       return (
         <div className="flex items-center gap-2">
-          {priority.icon && <priority.icon className="text-muted-foreground size-4" />}
-          <span>{priority.label}</span>
+          <div
+            className={cn(
+              'aspect-square size-1 rounded-full',
+              row.original.status === 'moderation' && 'bg-blue-600',
+              row.original.status === 'active' && 'bg-green-600',
+              row.original.status === 'hidden' && 'bg-gray-600',
+              row.original.status === 'disabled' && 'bg-red-600',
+              row.original.status === 'dissaproved' && 'bg-orange-600'
+            )}
+          ></div>
+          <p className="text-xs capitalize">{row.getValue('status')}</p>
         </div>
       )
-    },
-    filterFn: (row, id, value) => {
-      return value.includes(row.getValue(id))
     }
   },
   {

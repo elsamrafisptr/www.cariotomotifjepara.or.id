@@ -1,6 +1,10 @@
 'use client'
 
-import { TABLE_PRIORITIES, TABLE_STATUSES } from '@/common/constants'
+import {
+  conditionTypeOptions,
+  productTypeOptions,
+  statusTypeOptions
+} from '@/common/types'
 import { Table } from '@tanstack/react-table'
 import { X } from 'lucide-react'
 
@@ -20,25 +24,32 @@ export function DataTableToolbar<TData>({ table }: DataTableToolbarProps<TData>)
     <div className="flex items-center justify-between">
       <div className="flex flex-1 items-center gap-2">
         <Input
-          placeholder="Filter tasks..."
+          placeholder="Filter products..."
           value={(table.getColumn('title')?.getFilterValue() as string) ?? ''}
           onChange={event =>
             table.getColumn('title')?.setFilterValue(event.target.value)
           }
           className="h-8 w-[150px] lg:w-[250px]"
         />
+        {table.getColumn('type') && (
+          <DataTableFacetedFilter
+            column={table.getColumn('type')}
+            title="Product's Type"
+            options={productTypeOptions}
+          />
+        )}
+        {table.getColumn('condition') && (
+          <DataTableFacetedFilter
+            column={table.getColumn('condition')}
+            title="Condition"
+            options={conditionTypeOptions}
+          />
+        )}
         {table.getColumn('status') && (
           <DataTableFacetedFilter
             column={table.getColumn('status')}
             title="Status"
-            options={TABLE_STATUSES}
-          />
-        )}
-        {table.getColumn('priority') && (
-          <DataTableFacetedFilter
-            column={table.getColumn('priority')}
-            title="Priority"
-            options={TABLE_PRIORITIES}
+            options={statusTypeOptions}
           />
         )}
         {isFiltered && (

@@ -1,6 +1,6 @@
 'use client'
 
-import { productTypeOptions } from '@/common/types'
+import { productTypeOptions, statusTypeOptions } from '@/common/types'
 import { Table } from '@tanstack/react-table'
 import { X } from 'lucide-react'
 
@@ -33,6 +33,13 @@ export function DataTableToolbar<TData>({ table }: DataTableToolbarProps<TData>)
             column={table.getColumn('type')}
             title="Brand's Type"
             options={productTypeOptions}
+          />
+        )}
+        {table.getColumn('status') && (
+          <DataTableFacetedFilter
+            column={table.getColumn('status')}
+            title="Status"
+            options={statusTypeOptions}
           />
         )}
         {isFiltered && (

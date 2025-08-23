@@ -23,6 +23,11 @@ export const statusTypeOptions = [
   { label: 'Dissaproved', value: 'dissaproved' }
 ]
 
+export const conditionTypeOptions = [
+  { label: 'New', value: 'new' },
+  { label: 'Used', value: 'used' }
+]
+
 export const tableSchema = z.object({
   id: z.string(),
   title: z.string(),
@@ -43,3 +48,16 @@ export const brandSchema = z.object({
 })
 
 export type BrandSchema = z.infer<typeof brandSchema>
+
+export const productSchema = z.object({
+  id: z.string().optional(),
+  type: z.enum(['motorcycle', 'sparepart', 'car']),
+  status: z.enum(['moderation', 'active', 'hidden', 'disabled', 'dissaproved']),
+  brandId: z.number().nullable().optional(),
+  categoryId: z.number().nullable().optional(),
+  title: z.string().min(1, 'Title is required'),
+  description: z.string().nullable().optional(),
+  condition: z.enum(['new', 'used']).nullable()
+})
+
+export type ProductSchema = z.infer<typeof productSchema>
