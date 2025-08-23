@@ -29,7 +29,6 @@ export default function useLoginForm() {
           {
             onSuccess() {
               form.reset()
-              console.info('Login Success')
               window.location.href = '/dashboard'
             },
             onError(ctx) {

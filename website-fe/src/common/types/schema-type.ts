@@ -7,6 +7,12 @@ export type Brand = InferSelectModel<typeof brands>
 
 export type User = InferSelectModel<typeof user>
 
+export const productTypeOptions = [
+  { label: 'Motorcycle', value: 'motorcycle' },
+  { label: 'Spare Part', value: 'sparepart' },
+  { label: 'Car', value: 'car' }
+]
+
 export const tableSchema = z.object({
   id: z.string(),
   title: z.string(),
@@ -18,11 +24,11 @@ export const tableSchema = z.object({
 export type TableSchema = z.infer<typeof tableSchema>
 
 export const brandSchema = z.object({
-  id: z.number(),
-  name: z.string(),
+  id: z.number().optional(),
+  name: z.string().min(1, 'Brand name is required'),
   type: z.enum(['motorcycle', 'sparepart', 'car']),
-  url: z.string(),
-  imageUrl: z.string()
+  url: z.string().optional(),
+  imageUrl: z.string().optional()
 })
 
 export type BrandSchema = z.infer<typeof brandSchema>

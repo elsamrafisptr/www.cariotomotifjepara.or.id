@@ -258,9 +258,6 @@ export default function NewRecommendations({
   const handleViewAll = () => {
     if (onViewAll) {
       onViewAll()
-    } else {
-      // Default behavior - could navigate to products page
-      console.log('Navigate to all products page')
     }
   }
 

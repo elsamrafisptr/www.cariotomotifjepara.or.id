@@ -5,8 +5,9 @@ import {
   TableSchema,
   type User,
   brandSchema,
+  productTypeOptions,
   tableSchema
 } from './schema-type'
 
 export type { RouteItem, RouteTree, TableSchema, BrandSchema, Brand, User }
-export { tableSchema, brandSchema }
+export { tableSchema, brandSchema, productTypeOptions }

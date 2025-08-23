@@ -14,7 +14,8 @@ export class BrandService {
     imageUrl: string
   }) {
     if (!input.name.trim()) throw new Error('Brand name is required.')
-    if (!/^https?:\/\//.test(input.url)) throw new Error('Invalid URL.')
+    if (!input.url.startsWith('/')) throw new Error('Invalid slug.')
+
     return this.repo.create(input)
   }
 

@@ -1,7 +1,11 @@
 'use client'
 
+import { productTypeOptions } from '@/common/types'
 import { Table } from '@tanstack/react-table'
 import { X } from 'lucide-react'
+
+import { AddBrandForm } from '../form/form-create-table'
+import { DataTableFacetedFilter } from './faceted-filter'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -12,8 +16,6 @@ interface DataTableToolbarProps<TData> {
 
 export function DataTableToolbar<TData>({ table }: DataTableToolbarProps<TData>) {
   const isFiltered = table.getState().columnFilters.length > 0
-
-  console.log(table.getAllColumns().map(col => col.id))
 
   return (
     <div className="flex items-center justify-between">
@@ -26,6 +28,13 @@ export function DataTableToolbar<TData>({ table }: DataTableToolbarProps<TData>)
           }
           className="h-8 w-[150px] lg:w-[250px]"
         />
+        {table.getColumn('type') && (
+          <DataTableFacetedFilter
+            column={table.getColumn('type')}
+            title="Brand's Type"
+            options={productTypeOptions}
+          />
+        )}
         {isFiltered && (
           <Button variant="ghost" size="sm" onClick={() => table.resetColumnFilters()}>
             Reset
@@ -34,7 +43,7 @@ export function DataTableToolbar<TData>({ table }: DataTableToolbarProps<TData>)
         )}
       </div>
       <div className="flex items-center gap-2">
-        <Button size="sm">Add Brand</Button>
+        <AddBrandForm />
       </div>
     </div>
   )

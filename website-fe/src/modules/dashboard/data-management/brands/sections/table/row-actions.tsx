@@ -1,8 +1,13 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
+
 import { brandSchema } from '@/common/types'
 import { Row } from '@tanstack/react-table'
 import { MoreHorizontalIcon } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
+import { useState, useTransition } from 'react'
+import { toast } from 'sonner'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -19,8 +24,41 @@ interface DataTableRowActionsProps<TData> {
 }
 
 export function DataTableRowActions<TData>({ row }: DataTableRowActionsProps<TData>) {
-  const row_data = brandSchema.parse(row.original)
-  console.log(row_data)
+  const router = useRouter()
+  const [isPending, startTransition] = useTransition()
+  const [isLoading, setIsLoading] = useState(false)
+
+  const parsedData = brandSchema.safeParse(row.original)
+
+  if (!parsedData.success) {
+    console.error('Failed to parse row data:', parsedData.error)
+    return null
+  }
+
+  const row_data = parsedData.data
+
+  const handleDelete = async () => {
+    setIsLoading(true)
+    startTransition(async () => {
+      try {
+        const response = await fetch(`/api/v1/brands/${row_data.id}`, {
+          method: 'DELETE'
+        })
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok')
+        }
+
+        router.refresh()
+        toast.success('Brand deleted successfully.')
+      } catch (error) {
+        console.error('Delete failed:', error)
+        toast.error('Failed to delete brand.')
+      } finally {
+        setIsLoading(false)
+      }
+    })
+  }
 
   return (
     <DropdownMenu>
@@ -29,6 +67,7 @@ export function DataTableRowActions<TData>({ row }: DataTableRowActionsProps<TDa
           variant="ghost"
           size="icon"
           className="data-[state=open]:bg-muted size-8"
+          disabled={isPending || isLoading}
         >
           <MoreHorizontalIcon />
           <span className="sr-only">Open menu</span>
@@ -38,8 +77,21 @@ export function DataTableRowActions<TData>({ row }: DataTableRowActionsProps<TDa
         <DropdownMenuItem>View Data</DropdownMenuItem>
         <DropdownMenuItem>Edit</DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem variant="destructive">
-          Delete
+        <DropdownMenuItem
+          onSelect={event => {
+            event.preventDefault()
+            handleDelete()
+          }}
+          variant="destructive"
+          disabled={isPending || isLoading}
+        >
+          {isPending || isLoading ? (
+            <span className="flex items-center">
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Deleting...
+            </span>
+          ) : (
+            'Delete'
+          )}
           <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
