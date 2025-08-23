@@ -9,13 +9,20 @@ import { Loader2 } from 'lucide-react'
 import { useState, useTransition } from 'react'
 import { toast } from 'sonner'
 
+import { statusTypeOptions } from '@/common/types/schema-type'
+
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 
@@ -36,6 +43,35 @@ export function DataTableRowActions<TData>({ row }: DataTableRowActionsProps<TDa
   }
 
   const row_data = parsedData.data
+
+  const handleStatusChange = async (newStatus: string) => {
+    if (newStatus === row_data.status) return
+
+    setIsLoading(true)
+    startTransition(async () => {
+      try {
+        const response = await fetch(`/api/v1/brands/${row_data.id}`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ status: newStatus })
+        })
+
+        if (!response.ok) {
+          throw new Error('Failed to update brand')
+        }
+
+        router.refresh()
+        toast.success(`Brand status updated to "${newStatus}"`)
+      } catch (error) {
+        console.error('Status update failed:', error)
+        toast.error('Failed to update brand status.')
+      } finally {
+        setIsLoading(false)
+      }
+    })
+  }
 
   const handleDelete = async () => {
     setIsLoading(true)
@@ -76,6 +112,22 @@ export function DataTableRowActions<TData>({ row }: DataTableRowActionsProps<TDa
       <DropdownMenuContent align="end" className="w-[160px]">
         <DropdownMenuItem>View Data</DropdownMenuItem>
         <DropdownMenuItem>Edit</DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuSub>
+          <DropdownMenuSubTrigger>Status</DropdownMenuSubTrigger>
+          <DropdownMenuSubContent>
+            <DropdownMenuRadioGroup
+              value={row_data.status}
+              onValueChange={handleStatusChange}
+            >
+              {statusTypeOptions.map(label => (
+                <DropdownMenuRadioItem key={label.value} value={label.value}>
+                  {label.label}
+                </DropdownMenuRadioItem>
+              ))}
+            </DropdownMenuRadioGroup>
+          </DropdownMenuSubContent>
+        </DropdownMenuSub>
         <DropdownMenuSeparator />
         <DropdownMenuItem
           onSelect={event => {

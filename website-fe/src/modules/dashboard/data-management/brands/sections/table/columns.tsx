@@ -9,6 +9,8 @@ import { ColumnDef } from '@tanstack/react-table'
 import { DataTableColumnHeader } from './column-header'
 import { DataTableRowActions } from './row-actions'
 
+import { cn } from '@/lib/utils'
+
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -114,6 +116,27 @@ export const columns: ColumnDef<BrandSchema>[] = [
               Go to {row.getValue('name')} Page
             </Link>
           </Button>
+        </div>
+      )
+    }
+  },
+  {
+    accessorKey: 'status',
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Status" />,
+    cell: ({ row }) => {
+      return (
+        <div className="flex items-center gap-2">
+          <div
+            className={cn(
+              'aspect-square size-1 rounded-full',
+              row.original.status === 'moderation' && 'bg-blue-600',
+              row.original.status === 'active' && 'bg-green-600',
+              row.original.status === 'hidden' && 'bg-gray-600',
+              row.original.status === 'disabled' && 'bg-red-600',
+              row.original.status === 'dissaproved' && 'bg-orange-600'
+            )}
+          ></div>
+          <p className="text-xs capitalize">{row.getValue('status')}</p>
         </div>
       )
     }
