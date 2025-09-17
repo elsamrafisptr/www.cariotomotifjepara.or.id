@@ -171,7 +171,7 @@ const MotorProductCard = ({
             <p className="text-sm text-gray-600">Mulai dari</p>
             <div className="flex flex-col items-start">
               <div className="flex items-center gap-2">
-                <span className="text-2xl font-bold text-gray-900 md:text-4xl">
+                <span className="text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">
                   {formatPrice(price)}
                 </span>
                 <Tooltip>
