@@ -1,5 +1,7 @@
+import BlogManagement from '@/modules/dashboard/content-management/blog'
+
 const BlogContentManagementPage = () => {
-  return <div>BlogContentManagementPage</div>
+  return <BlogManagement />
 }
 
 export default BlogContentManagementPage
