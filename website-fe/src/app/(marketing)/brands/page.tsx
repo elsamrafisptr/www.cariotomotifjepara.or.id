@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 }
 
 const BrandsPage = async () => {
-  const brands = await brandService.listBrands()
+  const brands = await brandService.listAllByStatus('active')
 
   return (
     <section className="min-h-screen w-full bg-white px-5 py-12 sm:px-30">
@@ -51,6 +51,10 @@ const BrandsPage = async () => {
         <h1 className="text-3xl font-semibold">Brand/Merek Motor Tersedia</h1>
         <div className="mt-4 grid grid-cols-2 items-center gap-4 sm:gap-6 md:mt-6 md:grid-cols-3 md:gap-8">
           {brands.map((item: Partial<Brand>, index: number) => {
+            if (item.status !== 'active') {
+              return null
+            }
+
             return (
               <Link
                 href={'/brands' + item.url}

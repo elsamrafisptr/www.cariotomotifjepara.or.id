@@ -1,7 +1,7 @@
-import { eq } from 'drizzle-orm'
+import { InferEnum, eq } from 'drizzle-orm'
 
 import { db } from '@/lib/db'
-import { brands } from '@/lib/db/schema'
+import { brands, statusTypeEnum } from '@/lib/db/schema'
 
 export class BrandRepository {
   async create(data: Omit<typeof brands.$inferInsert, 'id'>) {
@@ -15,6 +15,12 @@ export class BrandRepository {
 
   async findAll() {
     return db.query.brands.findMany()
+  }
+
+  async findAllStatus(status: InferEnum<typeof statusTypeEnum>) {
+    return db.query.brands.findMany({
+      where: eq(brands.status, status)
+    })
   }
 
   async update(id: number, data: Partial<typeof brands.$inferInsert>) {
