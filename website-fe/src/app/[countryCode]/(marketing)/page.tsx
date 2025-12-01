@@ -3,7 +3,13 @@ import { getRegion } from '@/lib/data/regions'
 
 import Home from '@/modules/home'
 
-const HomePage = async (props: { params: Promise<{ countryCode: string }> }) => {
+type Props = {
+  params: Promise<{
+    countryCode: string
+  }>
+}
+
+const HomePage = async (props: Props) => {
   const params = await props.params
 
   const { countryCode } = params

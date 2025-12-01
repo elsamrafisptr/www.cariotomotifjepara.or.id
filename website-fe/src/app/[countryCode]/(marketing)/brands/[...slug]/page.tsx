@@ -1,13 +1,29 @@
 import Image from 'next/image'
+import { notFound } from 'next/navigation'
 
 import honda_new_motorcycles from '@/common/contents/products/honda/new-motorcycle-contents'
+
+import { getRegion } from '@/lib/data/regions'
 
 import { BrandMarquee } from '@/modules/home/sections/Home'
 
 import MotorProductCard from '@/components/elements/MotorProductCard'
 
-const BrandDetails = async ({ params }: { params: Promise<{ slug: string }> }) => {
-  const { slug } = await params
+type Props = {
+  params: Promise<{
+    countryCode: string
+    slug: string
+  }>
+}
+
+const BrandDetails = async (props: Props) => {
+  const params = await props.params
+  const { countryCode, slug } = params
+  const region = await getRegion(countryCode)
+
+  if (!region) {
+    notFound()
+  }
 
   const dataByBrand = honda_new_motorcycles.filter(
     moto => moto.brand.toLocaleLowerCase() === slug[1]

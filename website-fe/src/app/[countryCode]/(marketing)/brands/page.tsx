@@ -1,8 +1,11 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
 import { BASE_URL } from '@/common/constants'
+
+import { getRegion } from '@/lib/data/regions'
 
 export const metadata: Metadata = {
   title: 'Brand/Merek',
@@ -48,7 +51,21 @@ export const brands = [
   { src: '/yamaha-logo.png', href: '/brands/motorcycle/yamaha' }
 ]
 
-const BrandsPage = async () => {
+type Props = {
+  params: Promise<{
+    countryCode: string
+  }>
+}
+
+const BrandsPage = async (props: Props) => {
+  const params = await props.params
+  const { countryCode } = params
+  const region = await getRegion(countryCode)
+
+  if (!region) {
+    notFound()
+  }
+
   return (
     <section className="min-h-screen w-full bg-white px-5 py-12 sm:px-30">
       <div>
