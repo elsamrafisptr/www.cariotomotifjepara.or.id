@@ -8,10 +8,16 @@ import { useHasMounted } from '@/hooks'
 import 'aos/dist/aos.css'
 import { ReactNode, Suspense, useEffect } from 'react'
 
-import BackToTopButton from '../elements/BackToTopButton'
 import Navbar from '../elements/Navbar'
 import Footer from './Footer'
-import Loading from './Loading'
+
+const Loading = dynamic(() => import('./Loading'), {
+  ssr: false
+})
+
+const BackToTopButton = dynamic(() => import('../elements/BackToTopButton'), {
+  ssr: false
+})
 
 const FloatingWhatsApp = dynamic(() => import('../elements/WhatsappFloatingButton'), {
   ssr: false

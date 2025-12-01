@@ -1,13 +1,14 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
+import { useParams } from 'next/navigation'
 
-import { PAGE_ROUTES } from '@/common/constants'
 import { navigationItems, simpleItems } from '@/common/contents'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ChevronDownIcon, Menu, Phone } from 'lucide-react'
+import { ChevronDownIcon, MenuIcon, PhoneIcon } from 'lucide-react'
 import { memo, useEffect, useRef, useState } from 'react'
+
+import LocalizedLink from './LocalizedLink'
 
 import { cn } from '@/lib/utils'
 
@@ -15,6 +16,8 @@ import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 
 const PureNavbar = () => {
+  const { countryCode } = useParams()
+
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isHoveringDropdown, setIsHoveringDropdown] = useState(false)
@@ -66,10 +69,7 @@ const PureNavbar = () => {
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
-              <Link
-                href={PAGE_ROUTES.marketing.home.path}
-                className="flex items-center space-x-2"
-              >
+              <LocalizedLink href="/" className="flex items-center space-x-2">
                 <div className="relative flex h-8 w-8 items-center justify-center rounded bg-blue-600">
                   <Image
                     src="/logo.png"
@@ -82,7 +82,7 @@ const PureNavbar = () => {
                 <span className="text-xl font-bold text-gray-900">
                   Cari Otomotif Jepara
                 </span>
-              </Link>
+              </LocalizedLink>
             </div>
 
             {/* Desktop Navigation */}
@@ -94,7 +94,7 @@ const PureNavbar = () => {
                   asChild
                   className="h-10 cursor-pointer px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-gray-50 hover:text-blue-600"
                 >
-                  <Link href={item.href}>{item.title}</Link>
+                  <LocalizedLink href={item.href}>{item.title}</LocalizedLink>
                 </Button>
               ))}
 
@@ -127,6 +127,8 @@ const PureNavbar = () => {
             {/* Desktop CTA Buttons */}
             <div className="hidden items-center space-x-3 lg:flex">
               <Button
+                size="default"
+                className="cursor-pointer rounded bg-blue-600 px-4 text-white transition-colors duration-200 hover:bg-blue-700"
                 onClick={() =>
                   window.open(
                     'https://api.whatsapp.com/send/?phone=628122851744&text=Halo%20Pak%20Praba%2C%20saya%20ingin%20cari-cari%20otomotif%20di%20jepara%20nih',
@@ -134,10 +136,8 @@ const PureNavbar = () => {
                     'noopener,noreferrer'
                   )
                 }
-                size={'lg'}
-                className="cursor-pointer bg-blue-600 text-white transition-colors duration-200 hover:bg-blue-700"
               >
-                <Phone />
+                <PhoneIcon />
                 Pesan Sekarang
               </Button>
             </div>
@@ -150,7 +150,7 @@ const PureNavbar = () => {
                   size="icon"
                   className="hover:cursor-pointer lg:hidden"
                 >
-                  <Menu className="h-6 w-6" />
+                  <MenuIcon className="h-6 w-6" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
@@ -159,14 +159,14 @@ const PureNavbar = () => {
                   <nav className="mt-4 flex flex-col space-y-2">
                     {/* MAKE A CHANGE HERE */}
                     {simpleItems.map(item => (
-                      <Link
+                      <LocalizedLink
                         key={item.title}
                         href={item.href}
                         className="flex w-full items-center rounded-lg px-3 py-3 text-left text-base font-medium text-gray-700 transition-colors duration-200 hover:bg-gray-50 hover:text-blue-600"
                         onClick={handleMobileLinkClick}
                       >
                         {item.title}
-                      </Link>
+                      </LocalizedLink>
                     ))}
                   </nav>
                 </div>
@@ -210,7 +210,7 @@ const PureNavbar = () => {
                             ease: 'easeOut'
                           }}
                           className="flex h-24 w-full items-center justify-center rounded-lg bg-blue-600 text-white hover:bg-blue-700"
-                          href={section.href}
+                          href={`/${countryCode}${section.href}`}
                         >
                           <h3 className="text-sm font-semibold tracking-wide uppercase">
                             {section.title}
