@@ -10,8 +10,6 @@ bun run format:check
 
 bun run types:check
 
-bun run build
-
 bun run build:turbo
 
 echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'

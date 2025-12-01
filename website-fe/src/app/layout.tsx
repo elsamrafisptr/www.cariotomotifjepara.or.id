@@ -82,7 +82,7 @@ export default function RootLayout({
   children: ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" data-mode="light" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
