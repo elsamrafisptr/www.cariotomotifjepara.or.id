@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
+import { BrandMarquee } from '@/common/constants'
+
 import honda_new_motorcycles from '@/common/contents/products/honda/new-motorcycle-contents'
 
 import { getRegion } from '@/lib/data/regions'
-
-import { BrandMarquee } from '@/modules/home/sections/Home'
 
 import MotorProductCard from '@/components/elements/MotorProductCard'
 

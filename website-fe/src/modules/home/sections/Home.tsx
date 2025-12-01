@@ -1,18 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { BrandMarquee } from '@/common/constants'
+
 import CarouselHeadline from './CarouselHeadline'
 import ServicesCard from './ServicesCard'
 
 import { Marquee } from '@/components/ui/marquee'
-
-export const BrandMarquee = [
-  { src: '/honda-white-logo.png', href: '/brands/motorcycle/honda' },
-  { src: '/kawasaki-logo.png', href: '/brands/motorcycle/kawasaki' },
-  { src: '/piaggio-logo.png', href: '/brands/motorcycle/piaggio' },
-  { src: '/suzuki-logo.png', href: '/brands/motorcycle/suzuki' },
-  { src: '/yamaha-logo.png', href: '/brands/motorcycle/yamaha' }
-]
 
 const Home = () => {
   return (

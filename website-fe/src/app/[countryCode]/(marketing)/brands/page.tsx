@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-import { BASE_URL } from '@/common/constants'
+import { BASE_URL, BrandMarquee } from '@/common/constants'
 
 import { getRegion } from '@/lib/data/regions'
 
@@ -43,14 +43,6 @@ export const metadata: Metadata = {
   }
 }
 
-export const brands = [
-  { src: '/honda-white-logo.png', href: '/brands/motorcycle/honda' },
-  { src: '/kawasaki-logo.png', href: '/brands/motorcycle/kawasaki' },
-  { src: '/piaggio-logo.png', href: '/brands/motorcycle/piaggio' },
-  { src: '/suzuki-logo.png', href: '/brands/motorcycle/suzuki' },
-  { src: '/yamaha-logo.png', href: '/brands/motorcycle/yamaha' }
-]
-
 type Props = {
   params: Promise<{
     countryCode: string
@@ -71,7 +63,7 @@ const BrandsPage = async (props: Props) => {
       <div>
         <h1 className="text-3xl font-semibold">Brand/Merek Motor Tersedia</h1>
         <div className="mt-4 grid grid-cols-2 items-center gap-4 sm:gap-6 md:mt-6 md:grid-cols-3 md:gap-8">
-          {brands.map((item, index) => {
+          {BrandMarquee.map((item, index) => {
             return (
               <Link
                 href={item.href}
