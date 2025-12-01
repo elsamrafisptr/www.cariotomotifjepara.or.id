@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { BrandMarquee } from '@/common/constants'
+import { BRANDS_MARQUEE } from '@/common/constants'
 
 import CarouselHeadline from './CarouselHeadline'
 import ServicesCard from './ServicesCard'
@@ -20,7 +20,7 @@ const Home = () => {
       />
 
       <Marquee pauseOnHover className="bg-white py-6 [--duration:20s]">
-        {BrandMarquee.map((item, index) => (
+        {BRANDS_MARQUEE.map((item, index) => (
           <Link
             href={item.href}
             key={index}

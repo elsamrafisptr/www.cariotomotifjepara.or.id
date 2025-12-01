@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-import { BASE_URL, BrandMarquee } from '@/common/constants'
+import { BASE_URL, BRANDS_MARQUEE } from '@/common/constants'
 
 import { getRegion } from '@/lib/data/regions'
 
@@ -63,7 +63,7 @@ const BrandsPage = async (props: Props) => {
       <div>
         <h1 className="text-3xl font-semibold">Brand/Merek Motor Tersedia</h1>
         <div className="mt-4 grid grid-cols-2 items-center gap-4 sm:gap-6 md:mt-6 md:grid-cols-3 md:gap-8">
-          {BrandMarquee.map((item, index) => {
+          {BRANDS_MARQUEE.map((item, index) => {
             return (
               <Link
                 href={item.href}
