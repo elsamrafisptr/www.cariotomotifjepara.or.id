@@ -1,13 +1,9 @@
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
-import { BrandMarquee } from '@/common/constants'
-
-import honda_new_motorcycles from '@/common/contents/products/honda/new-motorcycle-contents'
+import { BRANDS_MARQUEE } from '@/common/constants'
 
 import { getRegion } from '@/lib/data/regions'
-
-import MotorProductCard from '@/components/elements/MotorProductCard'
 
 type Props = {
   params: Promise<{
@@ -25,11 +21,7 @@ const BrandDetails = async (props: Props) => {
     notFound()
   }
 
-  const dataByBrand = honda_new_motorcycles.filter(
-    moto => moto.brand.toLocaleLowerCase() === slug[1]
-  )
-
-  const imageByBrand = BrandMarquee.filter(moto =>
+  const imageByBrand = BRANDS_MARQUEE.filter(moto =>
     moto.href.toLocaleLowerCase().includes(slug[1]!.toLocaleLowerCase())
   )
 
@@ -53,30 +45,6 @@ const BrandDetails = async (props: Props) => {
           )
         })}
         <h1 className="text-4xl font-semibold capitalize md:text-6xl">{slug[1]}</h1>
-      </div>
-      <div className="grid grid-cols-1 gap-x-6 gap-y-8 py-8 md:grid-cols-3 md:gap-x-16 md:py-16">
-        {dataByBrand.length > 0 ? (
-          dataByBrand.map((item, index) => {
-            return (
-              <MotorProductCard
-                key={index}
-                title={item.title}
-                brand={item.brand}
-                images={item.more_information!.images}
-                price={item.pricing.otrPrice}
-                rating={item.more_information!.reviews.rating}
-                reviewCount={item.more_information!.reviews.total}
-                originalPrice={item.pricing.listingPrice}
-                transmission={item.transmission}
-                fuel={item.fuelType}
-              />
-            )
-          })
-        ) : (
-          <div className="col-span-1 flex h-48 w-full items-center justify-center rounded-lg bg-gray-100 text-xs text-gray-600 md:col-span-3 md:h-64 md:text-sm">
-            Belum ada produk tersedia pada bagian brand {slug[1]}
-          </div>
-        )}
       </div>
     </section>
   )

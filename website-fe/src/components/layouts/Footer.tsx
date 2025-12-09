@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 
-import { footerSections, socialLinks } from '@/common/contents'
+import { FOOTER_ITEMS, SOCIAL_ITEMS } from '@/common/constants'
 
 const Footer = () => {
   return (
@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
 
           {/* Footer Sections */}
-          {footerSections.map((section, index) => (
+          {FOOTER_ITEMS.map((section, index) => (
             <div key={index} className="lg:col-span-1">
               <h3 className="mb-4 text-center text-sm font-semibold tracking-wide text-gray-900 uppercase sm:text-left">
                 {section.title}
@@ -69,7 +69,7 @@ const Footer = () => {
                 Kunjungi Sosial Media Kami:
               </span>
               <div className="flex gap-3">
-                {socialLinks.map((social, index) => (
+                {SOCIAL_ITEMS.map((social, index) => (
                   <a
                     key={index}
                     href={social.href}

@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
 
-import { navigationItems, simpleItems } from '@/common/contents'
+import { NAVIGATION_ITEMS, SIMPLE_ITEMS } from '@/common/constants'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDownIcon, MenuIcon, PhoneIcon } from 'lucide-react'
 import { memo, useEffect, useRef, useState } from 'react'
@@ -87,7 +87,7 @@ const PureNavbar = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden items-center space-x-1 lg:flex">
-              {simpleItems.map(item => (
+              {SIMPLE_ITEMS.map(item => (
                 <Button
                   key={item.title}
                   variant="ghost"
@@ -98,7 +98,7 @@ const PureNavbar = () => {
                 </Button>
               ))}
 
-              {navigationItems.map(item => (
+              {NAVIGATION_ITEMS.map(item => (
                 <div
                   key={item?.title}
                   className="relative"
@@ -158,7 +158,7 @@ const PureNavbar = () => {
                 <div className="mt-6 flex flex-col space-y-6">
                   <nav className="mt-4 flex flex-col space-y-2">
                     {/* MAKE A CHANGE HERE */}
-                    {simpleItems.map(item => (
+                    {SIMPLE_ITEMS.map(item => (
                       <LocalizedLink
                         key={item.title}
                         href={item.href}
@@ -189,9 +189,8 @@ const PureNavbar = () => {
             onMouseLeave={handleDropdownMouseLeave}
           >
             <div className="container mx-auto px-4 py-8">
-              {navigationItems
-                .filter(item => item.title === activeDropdown)
-                .map(item => (
+              {NAVIGATION_ITEMS.filter(item => item.title === activeDropdown).map(
+                item => (
                   <motion.div
                     key={item.title}
                     initial={{ opacity: 0 }}
@@ -219,7 +218,8 @@ const PureNavbar = () => {
                       ))}
                     </div>
                   </motion.div>
-                ))}
+                )
+              )}
             </div>
           </motion.div>
         )}

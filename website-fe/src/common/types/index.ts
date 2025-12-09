@@ -1,5 +1,24 @@
 import type { RouteItem, RouteTree } from './route-type'
+import type { SEOProps } from './seo-type'
+import type {
+  FeaturedProduct,
+  SortOptions,
+  StoreFreeShippingPrice,
+  VariantPrice
+} from './store-type'
 
-type SortOptions = 'price_asc' | 'price_desc' | 'created_at'
+type IconProps = {
+  color?: string
+  size?: string | number
+} & React.SVGAttributes<SVGElement>
 
-export type { RouteItem, RouteTree, SortOptions }
+export type {
+  RouteItem,
+  RouteTree,
+  IconProps,
+  SortOptions,
+  FeaturedProduct,
+  VariantPrice,
+  StoreFreeShippingPrice,
+  SEOProps
+}
