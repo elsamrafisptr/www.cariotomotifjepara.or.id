@@ -1,11 +1,4 @@
-interface SEOProps {
-  title: string
-  description: string
-  keywords?: string[]
-  canonical?: string
-  images?: string[]
-  type?: 'website' | 'article'
-}
+import { SEOProps } from '@/common/types'
 
 export function generatePageMetadata({
   title,

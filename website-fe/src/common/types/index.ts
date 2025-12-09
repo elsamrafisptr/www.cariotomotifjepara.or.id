@@ -1,4 +1,5 @@
 import type { RouteItem, RouteTree } from './route-type'
+import type { SEOProps } from './seo-type'
 import type {
   FeaturedProduct,
   SortOptions,
@@ -18,5 +19,6 @@ export type {
   SortOptions,
   FeaturedProduct,
   VariantPrice,
-  StoreFreeShippingPrice
+  StoreFreeShippingPrice,
+  SEOProps
 }

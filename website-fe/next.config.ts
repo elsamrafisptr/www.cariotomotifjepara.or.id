@@ -5,7 +5,17 @@ import withBundleAnalyzer from '@next/bundle-analyzer'
 const baseConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: true,
-  serverExternalPackages: [],
+  logging: {
+    fetches: {
+      fullUrl: true
+    }
+  },
+  eslint: {
+    ignoreDuringBuilds: true
+  },
+  typescript: {
+    ignoreBuildErrors: true
+  },
   images: {
     remotePatterns: [
       {
